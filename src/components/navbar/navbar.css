@@ -1,0 +1,6 @@
+.navbar {
+    width: 100vw;
+    grid-row: 1/2;
+    background-color: #fff;
+    border-bottom: 1px solid #cacaca;
+}

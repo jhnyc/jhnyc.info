@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+:root {
+    --font-family: 'Inter', sans-serif;
+    --color-bg: #fff;
+    --color-bg-grey: #9FA4B2;
+    --color-skin: #E7B18B;
+    --color-hat: #24395D;
+    --color-skin-shade: #DCA883;
+    --color-shirt: #353537;
+    --color-macbook: #85878E;
+    --color-jeans: #181C27;
+    --color-jeans-fold: #5E6772;
+    --color-shoe: #F4F4F4;
+    --color-shoe-outline: #E4E4E4;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

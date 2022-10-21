@@ -1,0 +1,74 @@
+.main {
+    background-color: var(--color-bg-grey);
+    position: relative;
+}
+
+.block {
+    position: absolute;
+    width: 100vw;
+    transition: 0.6s ease-in-out;
+    cursor: pointer;
+}
+
+.block.active {
+    width: 100px;
+    transform: translateX(calc(50vw - 50px));
+}
+
+.block.hat {
+    background-color: var(--color-hat);
+    height: calc(100vh*3/64);
+    top: calc(100vh*10/64);
+}
+
+.block.face {
+    background-color: var(--color-skin);
+    height: calc(100vh*3/64);
+    top: calc(100vh*13/64);
+}
+
+.block.neck {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*2/64);
+    top: calc(100vh*16/64);
+}
+
+.block.shirt {
+    background-color: var(--color-shirt);
+    height: calc(100vh*9/64);
+    top: calc(100vh*18/64);
+}
+
+.block.macbook {
+    background-color: var(--color-macbook);
+    height: calc(100vh*5/64);
+    top: calc(100vh*27/64);
+}
+
+.block.jeans {
+    background-color: var(--color-jeans);
+    height: calc(100vh*16/64);
+    top: calc(100vh*32/64);
+}
+
+.block.jeans-fold {
+    background-color: var(--color-jeans-fold);
+    height: calc(100vh*1/64);
+    top: calc(100vh*48/64);
+}
+
+.block.leg {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*1/64);
+    top: calc(100vh*49/64);
+}
+
+.block.shoe {
+    background-color: var(--color-shoe);
+    height: calc(100vh*3/64);
+    top: calc(100vh*50/64);
+}
+
+.block.shoe-outline {
+    background-color: var(--color-shoe-outline);
+}
