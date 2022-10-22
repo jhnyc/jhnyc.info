@@ -268,7 +268,7 @@ button {
 }
 
 .block.face-v3 {
-    background-color: var(--color-skin);
+    background-color: #0DAB58;
     top: 40%;
     width: 35%;
     height: 13.3333%;
@@ -277,7 +277,7 @@ button {
 }
 
 .block.neck-v3 {
-    background-color: var(--color-skin-shade);
+    background-color: #FFC700;
     height: 21%;
     top: 12%;
     width: 21%;
@@ -313,7 +313,7 @@ button {
 }
 
 .block.jeans-fold-v3 {
-    background-color: var(--color-jeans-fold);
+    background-color: #F4745A;
     height: 20.3%;
     top: 33%;
     width: 25%;
@@ -321,7 +321,7 @@ button {
 }
 
 .block.leg-v3 {
-    background-color: var(--color-skin-shade);
+    background-color: #5551FE;
     height: 13%;
     top: 52%;
     width: 13%;
