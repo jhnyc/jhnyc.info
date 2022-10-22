@@ -4,7 +4,9 @@
     --color-bg: #fff;
     --color-bg-grey: #9FA4B2;
     --color-skin: #E7B18B;
+    --color-hat-outline: #1B2C47;
     --color-hat: #24395D;
+    --color-hair: #301B0A;
     --color-skin-shade: #DCA883;
     --color-shirt: #353537;
     --color-macbook: #85878E;
@@ -12,6 +14,10 @@
     --color-jeans-fold: #5E6772;
     --color-shoe: #F4F4F4;
     --color-shoe-outline: #E4E4E4;
+    --color-orange: #F4745A;
+    --color-green: #0DAB58;
+    --color-purple: #5551FE;
+    --color-yellow: #F6C100;
 }
 
 body {

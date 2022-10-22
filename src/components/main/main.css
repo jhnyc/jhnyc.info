@@ -23,7 +23,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 64vmin;
+    width: 65vmin;
     height: 64vmin;
     position: relative;
 }
@@ -63,7 +63,7 @@ button {
     background-color: var(--color-macbook);
     height: calc(100vh*5/64);
     top: calc(100vh*17/64);
-    width: 14%
+    width: 14%;
 }
 
 .block.jeans-v0 {
@@ -268,16 +268,16 @@ button {
 }
 
 .block.face-v3 {
-    background-color: #0DAB58;
+    background-color: var(--color-green);
     top: 40%;
-    width: 35%;
+    width: 27.5%;
     height: 13.3333%;
-    transform: translateX(calc(64vmin*0.325));
+    transform: translateX(calc(64vmin*0.3625));
     border-top-left-radius: 0px;
 }
 
 .block.neck-v3 {
-    background-color: #FFC700;
+    background-color: var(--color-yellow);
     height: 21%;
     top: 12%;
     width: 21%;
@@ -313,15 +313,15 @@ button {
 }
 
 .block.jeans-fold-v3 {
-    background-color: #F4745A;
+    background-color: var(--color-orange);
     height: 20.3%;
     top: 33%;
-    width: 25%;
-    transform: translateX(calc(64vmin*0.025));
+    width: 32.5%;
+    transform: translateX(calc(64vmin*0.06));
 }
 
 .block.leg-v3 {
-    background-color: #5551FE;
+    background-color: var(--color-purple);
     height: 13%;
     top: 52%;
     width: 13%;
@@ -345,9 +345,10 @@ button {
 
 .block.hat-v4 {
     background-color: var(--color-hat);
-    height: calc(100vh*3/64);
+    height: calc(100vh*1/64);
     top: 0px;
-    width: 14%
+    width: 14%;
+    transform: translate(calc(64vmin*1*0.0233), calc(64vmin*1*0.023));
 }
 
 .block.face-v4 {
@@ -380,6 +381,8 @@ button {
     top: calc(100vh*17/64);
     width: 23.33%;
     transform: translateX(calc(64vmin*0.0233));
+    z-index: 10;
+    border-radius: 3px;
 }
 
 .block.jeans-v4 {
@@ -411,104 +414,260 @@ button {
     width: 14%
 }
 
-.block.shoe-outline-v4 {
+
+/* outline ----------------------------------------------------- */
+
+.outline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .6s ease-in-out;
+}
+
+.block.shoe-outline {
     background-color: var(--color-shoe-outline);
 }
 
-.block.shirt-outline1-v4 {
+.block.shirt-outline1 {
     background-color: #000;
-    height: calc(100vh*8/64);
+    height: calc(100vh*13/64);
     width: 2.333%;
-    transform: translate(calc(-64vmin*2.47*0.0233), calc(-64vmin*7.8*0.0233))
+    transform: translate(calc(-64vmin*2.48*0.0233), calc(-64vmin*5.2*0.0233))
 }
 
-.block.shirt-outline2-v4 {
+.block.shirt-outline2 {
     background-color: #000;
     height: 2.333%;
     width: 2.333%;
     transform: translate(calc(-64vmin*1.5*0.0233), calc(-64vmin*12.5*0.0233))
 }
 
-.block.shirt-outline3-v4 {
+.block.shirt-outline3 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 4.666%;
     transform: translate(calc(64vmin*0*0.0233), calc(-64vmin*13.6*0.0233))
 }
 
-.block.shirt-outline4-v4 {
+.block.shirt-outline4 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 4.666%;
     transform: translate(calc(64vmin*2*0.0233), calc(-64vmin*12.55*0.0233))
 }
 
-.block.shirt-outline5-v4 {
+.block.shirt-outline5 {
     background-color: #000;
-    height: calc(100vh*8/64);
+    height: calc(100vh*13/64);
     width: 2.333%;
-    transform: translate(calc(64vmin*3.47*0.0233), calc(-64vmin*7.8*0.0233))
+    transform: translate(calc(64vmin*3.49*0.0233), calc(-64vmin*5.2*0.0233))
 }
 
-.block.shoulder-outline1-v4 {
+.block.shirt-outline6 {
+    background-color: #000;
+    height: calc(100vh*1/64);
+    width: 11.65%;
+    transform: translate(calc(64vmin*0.52*0.0233), calc(64vmin*1.1*0.0233))
+}
+
+.block.shoulder-outline1 {
     background-color: #000;
     height: calc(100vh*3/64);
     width: 2.333%;
     transform: translate(calc(-64vmin*1.5*0.0233), calc(-64vmin*9.4*0.0233))
 }
 
-.block.shoulder-outline2-v4 {
+.block.shoulder-outline2 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 4.666%;
     transform: translate(calc(64vmin*0*0.0233), calc(-64vmin*11.5*0.0233))
 }
 
-.block.shoulder-outline3-v4 {
+.block.shoulder-outline3 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 2.333%;
     transform: translate(calc(64vmin*1.5*0.0233), calc(-64vmin*10.4*0.0233))
 }
 
-.block.shoulder-outline4-v4 {
+.block.shoulder-outline4 {
     background-color: #000;
     height: calc(100vh*2/64);
     width: 2.333%;
     transform: translate(calc(64vmin*2.5*0.0233), calc(-64vmin*8.8*0.0233))
 }
 
-.block.shoulder-outline5-v4 {
+.block.shoulder-outline5 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 7%;
     transform: translate(calc(64vmin*0.5*0.0233), calc(-64vmin*7.25*0.0233))
 }
 
-.block.leg-outline1-v4 {
+.block.leg-outline1 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 2.333%;
     transform: translate(calc(-64vmin*1.5*0.0233), calc(64vmin*19.9*0.0233))
 }
 
-.block.leg-outline2-v4 {
+.block.leg-outline2 {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 2.333%;
     transform: translate(calc(64vmin*0.5*0.0233), calc(64vmin*19.9*0.0233))
 }
 
-.block.jeans-outline1-v4 {
+.block.jeans-outline1 {
     background-color: #000;
-    height: calc(100vh*15/64);
+    height: calc(100vh*16/64);
     width: 2.333%;
-    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*10.48*0.0233))
+    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*9.95*0.0233))
 }
 
-.block.jeans-outline2-v4 {
+.block.jeans-outline2 {
     background-color: #000;
-    height: calc(100vh*15/64);
+    height: calc(100vh*16/64);
     width: 2.333%;
-    transform: translate(calc(-64vmin*2.5*0.0233), calc(64vmin*10.48*0.0233))
+    transform: translate(calc(-64vmin*2.48*0.0233), calc(64vmin*9.95*0.0233))
+}
+
+.block.hat-outline1 {
+    background-color: var(--color-hat-outline);
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*15.7*0.0233))
+}
+
+.block.hat-outline2 {
+    background-color: var(--color-hat-outline);
+    height: calc(100vh*3/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*2.55*0.0233), calc(-64vmin*17.8*0.0233))
+}
+
+.block.hat-outline3 {
+    background-color: var(--color-hat-outline);
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*19.9*0.0233))
+}
+
+.block.hat-outline4 {
+    background-color: var(--color-hat-outline);
+    height: calc(100vh*1/64);
+    width: 4.666%;
+    transform: translate(calc(-64vmin*0*0.0233), calc(-64vmin*21*0.0233))
+}
+
+.block.hat-1 {
+    background-color: var(--color-hat);
+    height: calc(100vh*3/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*17.8*0.0233))
+}
+
+.block.hat-2 {
+    background-color: var(--color-hat);
+    height: calc(100vh*3/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*0.55*0.0233), calc(-64vmin*18.9*0.0233))
+}
+
+.block.hat-3 {
+    background-color: var(--color-hat);
+    height: calc(100vh*1.1/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*0.49*0.0233), calc(-64vmin*18.9*0.0233));
+}
+
+.block.hair-1 {
+    background-color: var(--color-hair);
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*0.45*0.0233), calc(-64vmin*17.85*0.0233))
+}
+
+.block.hair-2 {
+    background-color: var(--color-hair);
+    height: calc(100vh*1/64);
+    width: 4.667%;
+    transform: translate(calc(64vmin*2*0.0233), calc(-64vmin*18.9*0.0233));
+}
+
+.block.hand-1 {
+    background-color: #000;
+    height: calc(100vh*6/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
+    z-index: 20;
+}
+
+.block.hand-2 {
+    background-color: #000;
+    height: calc(100vh*3/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*0.5*0.0233), calc(64vmin*1.2*0.0233));
+    z-index: 20;
+}
+
+.block.hand-3 {
+    background-color: #000;
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*1.53*0.0233), calc(64vmin*3.3*0.0233));
+    z-index: 20;
+}
+
+.block.hand-4 {
+    background-color: #000;
+    height: calc(100vh*5/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*1.5*0.0233), calc(-64vmin*4.08*0.0233));
+    z-index: 20;
+}
+
+.block.hand-5 {
+    background-color: #000;
+    height: calc(100vh*3/64);
+    width: 2.3%;
+    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*0.15*0.0233));
+    z-index: 20;
+}
+
+.block.hand-6 {
+    background-color: #000;
+    height: calc(100vh*2/64);
+    width: 2.3%;
+    transform: translate(calc(64vmin*3.45*0.0233), calc(64vmin*2.75*0.0233));
+    z-index: 20;
+}
+
+.block.hand-fill-1 {
+    background-color: var(--color-skin);
+    height: calc(100vh*6/64);
+    width: 2.3%;
+    transform: translate(calc(64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
+    z-index: 20;
+}
+
+.block.hand-fill-2 {
+    background-color: var(--color-skin);
+    height: calc(100vh*3.95/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*1.5*0.0233), calc(64vmin*0.65*0.0233));
+    z-index: 20;
+}
+
+.block.hand-fill-3 {
+    background-color: var(--color-skin);
+    height: calc(100vh*2/64);
+    width: 2.3%;
+    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*2.75*0.0233));
+    z-index: 20;
 }
