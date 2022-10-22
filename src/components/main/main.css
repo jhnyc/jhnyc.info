@@ -1,74 +1,251 @@
 .main {
+    display: flex;
     background-color: var(--color-bg-grey);
     position: relative;
+    justify-content: center;
+}
+
+button {
+    height: 30px;
 }
 
 .block {
     position: absolute;
     width: 100vw;
-    transition: 0.6s ease-in-out;
+    /* transition: 0.6s cubic-bezier(0, .75, 1, .75); */
+    transition: .6s ease-in-out;
     cursor: pointer;
 }
 
-.block.active {
-    width: 100px;
-    transform: translateX(calc(50vw - 50px));
+.block_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vh*53/64);
+    height: 100%;
+    position: relative;
 }
 
-.block.hat {
+
+/* v0 ----------------------------------------------------- */
+
+.block.hat-v0 {
     background-color: var(--color-hat);
     height: calc(100vh*3/64);
     top: calc(100vh*10/64);
+    transform: scaleX(0.1);
 }
 
-.block.face {
+.block.face-v0 {
     background-color: var(--color-skin);
     height: calc(100vh*3/64);
     top: calc(100vh*13/64);
+    transform: scaleX(0.1);
 }
 
-.block.neck {
+.block.neck-v0 {
     background-color: var(--color-skin-shade);
     height: calc(100vh*2/64);
     top: calc(100vh*16/64);
+    transform: scaleX(0.1);
 }
 
-.block.shirt {
+.block.shirt-v0 {
     background-color: var(--color-shirt);
     height: calc(100vh*9/64);
     top: calc(100vh*18/64);
+    transform: scaleX(0.1);
 }
 
-.block.macbook {
+.block.macbook-v0 {
     background-color: var(--color-macbook);
     height: calc(100vh*5/64);
     top: calc(100vh*27/64);
+    transform: scaleX(0.1);
 }
 
-.block.jeans {
+.block.jeans-v0 {
     background-color: var(--color-jeans);
     height: calc(100vh*16/64);
     top: calc(100vh*32/64);
+    transform: scaleX(0.1);
 }
 
-.block.jeans-fold {
+.block.jeans-fold-v0 {
     background-color: var(--color-jeans-fold);
     height: calc(100vh*1/64);
     top: calc(100vh*48/64);
+    transform: scaleX(0.1);
 }
 
-.block.leg {
+.block.leg-v0 {
     background-color: var(--color-skin-shade);
     height: calc(100vh*1/64);
     top: calc(100vh*49/64);
+    transform: scaleX(0.1);
 }
 
-.block.shoe {
+.block.shoe-v0 {
     background-color: var(--color-shoe);
     height: calc(100vh*3/64);
     top: calc(100vh*50/64);
+    transform: scaleX(0.1);
 }
 
-.block.shoe-outline {
+.block.shoe-outline-v0 {
+    background-color: var(--color-shoe-outline);
+}
+
+
+/* v1 ----------------------------------------------------- */
+
+.block.hat-v1 {
+    background-color: var(--color-hat);
+    height: calc(100vh*3/64);
+    top: calc(100vh*10/64);
+    width: 100%;
+}
+
+.block.face-v1 {
+    background-color: var(--color-skin);
+    height: calc(100vh*3/64);
+    top: calc(100vh*13/64);
+    width: 100%;
+}
+
+.block.neck-v1 {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*2/64);
+    top: calc(100vh*16/64);
+    width: 100%;
+}
+
+.block.shirt-v1 {
+    background-color: var(--color-shirt);
+    height: calc(100vh*9/64);
+    top: calc(100vh*18/64);
+    width: 100%;
+}
+
+.block.macbook-v1 {
+    background-color: var(--color-macbook);
+    height: calc(100vh*5/64);
+    top: calc(100vh*27/64);
+    width: 100%;
+}
+
+.block.jeans-v1 {
+    background-color: var(--color-jeans);
+    height: calc(100vh*16/64);
+    top: calc(100vh*32/64);
+    width: 100%;
+}
+
+.block.jeans-fold-v1 {
+    background-color: var(--color-jeans-fold);
+    height: calc(100vh*1/64);
+    top: calc(100vh*48/64);
+    width: 100%;
+}
+
+.block.leg-v1 {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*1/64);
+    top: calc(100vh*49/64);
+    width: 100%;
+}
+
+.block.shoe-v1 {
+    background-color: var(--color-shoe);
+    height: calc(100vh*3/64);
+    top: calc(100vh*50/64);
+    width: 100%;
+}
+
+.block.shoe-outline-v1 {
+    background-color: var(--color-shoe-outline);
+}
+
+
+/* v2 ----------------------------------------------------- */
+
+[class*="-v2"] {
+    border-radius: 100rem;
+}
+
+.block.hat-v2 {
+    background-color: var(--color-hat);
+    height: calc(100vh*3/64);
+    top: calc(100vh*10/64);
+    width: 58%;
+    transform: translateX(5%);
+}
+
+.block.face-v2 {
+    background-color: var(--color-skin);
+    height: calc(100vh*3/64);
+    top: calc(100vh*14/64);
+    width: 58%;
+    transform: translateX(30%);
+}
+
+.block.neck-v2 {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*2/64);
+    top: calc(100vh*15/64);
+    width: 37%;
+    transform: translateX(-90%);
+}
+
+.block.shirt-v2 {
+    background-color: var(--color-shirt);
+    height: calc(100vh*6.5/64);
+    top: calc(100vh*18/64);
+    width: 79%;
+    transform: translateX(5%);
+}
+
+.block.macbook-v2 {
+    background-color: var(--color-macbook);
+    height: calc(100vh*5/64);
+    top: calc(100vh*25.5/64);
+    width: 60%;
+    transform: translateX(-35%);
+}
+
+.block.jeans-v2 {
+    background-color: var(--color-jeans);
+    height: calc(100vh*14/64);
+    top: calc(100vh*31.5/64);
+    width: 100%;
+    transform: translateX(0%);
+}
+
+.block.jeans-fold-v2 {
+    background-color: var(--color-jeans-fold);
+    height: calc(100vh*2.5/64);
+    top: calc(100vh*46.5/64);
+    width: 62%;
+    transform: translateX(30%);
+}
+
+.block.leg-v2 {
+    background-color: var(--color-skin-shade);
+    height: calc(100vh*2.5/64);
+    top: calc(100vh*46.5/64);
+    width: 33%;
+    transform: translateX(-90%);
+}
+
+.block.shoe-v2 {
+    background-color: var(--color-shoe);
+    height: calc(100vh*3/64);
+    top: calc(100vh*50/64);
+    width: 71%;
+    transform: translateX(5%);
+}
+
+.block.shoe-outline-v2 {
     background-color: var(--color-shoe-outline);
 }
