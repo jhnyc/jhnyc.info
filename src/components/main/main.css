@@ -216,7 +216,7 @@ button {
 }
 
 .block.jeans-v2 {
-    background-color: var(--color-jeans);
+    background-color: #1A2440;
     height: calc(100vh*14/64);
     top: calc(100vh*21.5/64);
     width: 100%;

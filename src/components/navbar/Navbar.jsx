@@ -2,5 +2,9 @@ import React from "react";
 import "./navbar.css";
 
 export default function Navbar() {
-  return <nav className="navbar"> Navbar </nav>;
+  return (
+    <nav className="navbar">
+      <p id="icon">jhnyc.io</p>
+    </nav>
+  );
 }
