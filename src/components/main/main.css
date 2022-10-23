@@ -1,6 +1,6 @@
 .main {
     display: flex;
-    background-color: var(--color-bg-grey);
+    background-color: var(--color-bg);
     position: relative;
     justify-content: center;
     align-items: center;
@@ -606,7 +606,7 @@ button {
 }
 
 .block.shoe-outline5 {
-    background-color: var(--color-bg-grey);
+    background-color: var(--color-bg);
     height: calc(100vh*1/64);
     width: 2.34%;
     transform: translate(calc(64vmin*2.53*0.0233), calc(64vmin*20.96*0.0233))
