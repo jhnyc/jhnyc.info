@@ -25,16 +25,23 @@ export default function Main() {
       <button className="1" onClick={() => changeVersion("v4")}>
         4
       </button>
+      <button className="1" onClick={() => changeVersion("v5")}>
+        5
+      </button>
+      <button className="1" onClick={() => changeVersion("v6")}>
+        6
+      </button>
       <div className={`block_container`}>
-        <div className={`block hat-${version}`}></div>
-        <div className={`block face-${version}`}></div>
-        <div className={`block neck-${version}`}></div>
         <div className={`block shirt-${version}`}></div>
-        <div className={`block macbook-${version}`}></div>
+        <div className={`block face-${version}`}></div>
         <div className={`block jeans-${version}`}></div>
         <div className={`block jeans-fold-${version}`}></div>
         <div className={`block leg-${version}`}></div>
         <div className={`block shoe-${version}`}></div>
+        <div className={`block shoe-outline-${version}`}></div>
+        <div className={`block hat-${version}`}></div>
+        <div className={`block neck-${version}`}></div>
+        <div className={`block macbook-${version}`}></div>
         <div
           className="outline"
           style={{ opacity: version === "v4" ? "100" : "0" }}
