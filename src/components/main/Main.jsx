@@ -119,41 +119,7 @@ export default function Main() {
               active ? `block shirt-outline6 active` : `block shirt-outline6`
             }
           ></div>
-          <div
-            className={
-              active
-                ? `block shoulder-outline1 active`
-                : `block shoulder-outline1`
-            }
-          ></div>
-          <div
-            className={
-              active
-                ? `block shoulder-outline2 active`
-                : `block shoulder-outline2`
-            }
-          ></div>
-          <div
-            className={
-              active
-                ? `block shoulder-outline3 active`
-                : `block shoulder-outline3`
-            }
-          ></div>
-          <div
-            className={
-              active
-                ? `block shoulder-outline4 active`
-                : `block shoulder-outline4`
-            }
-          ></div>
-          <div
-            className={
-              active
-                ? `block shoulder-outline5 active`
-                : `block shoulder-outline5`
-            }
-          ></div>
+
           <div
             className={
               active ? `block leg-outline1 active` : `block leg-outline1`
@@ -194,6 +160,31 @@ export default function Main() {
               active ? `block hat-outline4 active` : `block hat-outline4`
             }
           ></div>
+          <div
+            className={
+              active ? `block shoe-outline1 active` : `block shoe-outline1`
+            }
+          ></div>
+          <div
+            className={
+              active ? `block shoe-outline2 active` : `block shoe-outline2`
+            }
+          ></div>
+          <div
+            className={
+              active ? `block shoe-outline3 active` : `block shoe-outline3`
+            }
+          ></div>
+          <div
+            className={
+              active ? `block shoe-outline4 active` : `block shoe-outline4`
+            }
+          ></div>
+          <div
+            className={
+              active ? `block shoe-outline5 active` : `block shoe-outline5`
+            }
+          ></div>
           <div className={active ? `block hat-1 active` : `block hat-1`}></div>
           <div className={active ? `block hat-2 active` : `block hat-2`}></div>
           <div className={active ? `block hat-3 active` : `block hat-3`}></div>
@@ -202,6 +193,46 @@ export default function Main() {
           ></div>
           <div
             className={active ? `block hair-2 active` : `block hair-2`}
+          ></div>
+        </div>
+        <div
+          className="arm"
+          style={{ opacity: version === "v4" ? "100" : "0" }}
+        >
+          <div
+            className={
+              active
+                ? `block shoulder-outline1 active`
+                : `block shoulder-outline1`
+            }
+          ></div>
+          <div
+            className={
+              active
+                ? `block shoulder-outline2 active`
+                : `block shoulder-outline2`
+            }
+          ></div>
+          <div
+            className={
+              active
+                ? `block shoulder-outline3 active`
+                : `block shoulder-outline3`
+            }
+          ></div>
+          <div
+            className={
+              active
+                ? `block shoulder-outline4 active`
+                : `block shoulder-outline4`
+            }
+          ></div>
+          <div
+            className={
+              active
+                ? `block shoulder-outline5 active`
+                : `block shoulder-outline5`
+            }
           ></div>
           <div
             className={active ? `block hand-1 active` : `block hand-1`}

@@ -13,7 +13,7 @@ button {
 .block {
     position: absolute;
     width: 100vw;
-    transition: .6s ease-in-out;
+    transition: 0.6s ease-in-out;
     /* transition: 0.6s cubic-bezier(0, .75, 1, .75); */
     cursor: pointer;
 }
@@ -381,8 +381,8 @@ button {
     top: calc(100vh*17/64);
     width: 23.33%;
     transform: translateX(calc(64vmin*0.0233));
-    z-index: 10;
     border-radius: 3px;
+    z-index: 5;
 }
 
 .block.jeans-v4 {
@@ -425,7 +425,19 @@ button {
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: .6s ease-in-out;
+    transition: .9s ease-in-out;
+}
+
+.arm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .9s ease-in-out;
+    z-index: 10;
 }
 
 .block.shoe-outline {
@@ -565,6 +577,41 @@ button {
     transform: translate(calc(-64vmin*0*0.0233), calc(-64vmin*21*0.0233))
 }
 
+.block.shoe-outline1 {
+    background-color: var(--color-shoe-outline);
+    height: calc(100vh*3/64);
+    width: 2.333%;
+    transform: translate(calc(-64vmin*2.51*0.0233), calc(64vmin*22*0.0233))
+}
+
+.block.shoe-outline2 {
+    background-color: var(--color-shoe-outline);
+    height: calc(100vh*1/64);
+    width: 11.666%;
+    transform: translate(calc(64vmin*0.5*0.0233), calc(64vmin*23.1*0.0233))
+}
+
+.block.shoe-outline3 {
+    background-color: var(--color-shoe-outline);
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*1.5*0.0233), calc(64vmin*21*0.0233))
+}
+
+.block.shoe-outline4 {
+    background-color: var(--color-shoe-outline);
+    height: calc(100vh*1/64);
+    width: 2.333%;
+    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*22.05*0.0233))
+}
+
+.block.shoe-outline5 {
+    background-color: var(--color-bg-grey);
+    height: calc(100vh*1/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*2.53*0.0233), calc(64vmin*20.96*0.0233))
+}
+
 .block.hat-1 {
     background-color: var(--color-hat);
     height: calc(100vh*3/64);
@@ -605,7 +652,6 @@ button {
     height: calc(100vh*6/64);
     width: 2.333%;
     transform: translate(calc(-64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
-    z-index: 20;
 }
 
 .block.hand-2 {
@@ -613,7 +659,6 @@ button {
     height: calc(100vh*3/64);
     width: 2.333%;
     transform: translate(calc(64vmin*0.5*0.0233), calc(64vmin*1.2*0.0233));
-    z-index: 20;
 }
 
 .block.hand-3 {
@@ -621,7 +666,6 @@ button {
     height: calc(100vh*1/64);
     width: 2.333%;
     transform: translate(calc(64vmin*1.53*0.0233), calc(64vmin*3.3*0.0233));
-    z-index: 20;
 }
 
 .block.hand-4 {
@@ -629,7 +673,6 @@ button {
     height: calc(100vh*5/64);
     width: 2.333%;
     transform: translate(calc(64vmin*1.5*0.0233), calc(-64vmin*4.08*0.0233));
-    z-index: 20;
 }
 
 .block.hand-5 {
@@ -637,7 +680,6 @@ button {
     height: calc(100vh*3/64);
     width: 2.3%;
     transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*0.15*0.0233));
-    z-index: 20;
 }
 
 .block.hand-6 {
@@ -645,7 +687,6 @@ button {
     height: calc(100vh*2/64);
     width: 2.3%;
     transform: translate(calc(64vmin*3.45*0.0233), calc(64vmin*2.75*0.0233));
-    z-index: 20;
 }
 
 .block.hand-fill-1 {
@@ -653,7 +694,6 @@ button {
     height: calc(100vh*6/64);
     width: 2.3%;
     transform: translate(calc(64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
-    z-index: 20;
 }
 
 .block.hand-fill-2 {
@@ -661,7 +701,6 @@ button {
     height: calc(100vh*3.95/64);
     width: 2.34%;
     transform: translate(calc(64vmin*1.5*0.0233), calc(64vmin*0.65*0.0233));
-    z-index: 20;
 }
 
 .block.hand-fill-3 {
@@ -669,5 +708,4 @@ button {
     height: calc(100vh*2/64);
     width: 2.3%;
     transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*2.75*0.0233));
-    z-index: 20;
 }
