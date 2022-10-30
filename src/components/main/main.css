@@ -350,10 +350,10 @@ button {
 
 .block.hat-v4 {
     background-color: var(--color-hat);
-    height: calc(100vh*1/64);
+    height: calc(100vh*1.01/64);
     top: 0px;
     width: 14%;
-    transform: translate(calc(64vmin*1*0.0233), calc(64vmin*1*0.023));
+    transform: translate(calc(64vmin*1*0.0233), calc(64vmin*1*0.0231));
 }
 
 .block.face-v4 {
@@ -374,7 +374,7 @@ button {
 
 .block.shirt-v4 {
     background-color: var(--color-shirt);
-    height: calc(100vh*9/64);
+    height: calc(100vh*13.1/64);
     top: calc(100vh*8/64);
     width: 11.67%;
     transform: translateX(calc(64vmin*0.01165));
@@ -401,7 +401,8 @@ button {
     background-color: var(--color-jeans-fold);
     height: calc(100vh*1/64);
     top: calc(100vh*38/64);
-    width: 14%
+    width: 14%;
+    z-index: 5
 }
 
 .block.leg-v4 {
@@ -414,9 +415,10 @@ button {
 
 .block.shoe-v4 {
     background-color: var(--color-shoe);
-    height: calc(100vh*3/64);
+    height: calc(100vh*2.9/64);
     top: calc(100vh*40/64);
-    width: 14%
+    width: 11.6%;
+    transform: translateX(calc(-64vmin*0.01165));
 }
 
 
@@ -646,7 +648,7 @@ button {
     background-color: #000;
     height: calc(100vh*1/64);
     width: 4.666%;
-    transform: translate(calc(64vmin*0*0.0233), calc(-64vmin*13.6*0.0233))
+    transform: translate(calc(64vmin*0*0.0233), calc(-64vmin*13.6*0.0232))
 }
 
 .block.shirt-outline4 {
@@ -658,9 +660,9 @@ button {
 
 .block.shirt-outline5 {
     background-color: #000;
-    height: calc(100vh*13/64);
-    width: 2.333%;
-    transform: translate(calc(64vmin*3.49*0.0233), calc(-64vmin*5.2*0.0233))
+    height: calc(100vh*13.15/64);
+    width: 2.328%;
+    transform: translate(calc(64vmin*3.49*0.0232), calc(-64vmin*5.2*0.0232))
 }
 
 .block.shirt-outline6 {
@@ -672,9 +674,9 @@ button {
 
 .block.shoulder-outline1 {
     background-color: #000;
-    height: calc(100vh*3/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*1.5*0.0233), calc(-64vmin*9.4*0.0233))
+    height: calc(100vh*3.1/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*1.5*0.023), calc(-64vmin*9.4*0.0233))
 }
 
 .block.shoulder-outline2 {
@@ -686,7 +688,7 @@ button {
 
 .block.shoulder-outline3 {
     background-color: #000;
-    height: calc(100vh*1/64);
+    height: calc(100vh*1.05/64);
     width: 2.333%;
     transform: translate(calc(64vmin*1.5*0.0233), calc(-64vmin*10.4*0.0233))
 }
@@ -701,7 +703,7 @@ button {
 .block.shoulder-outline5 {
     background-color: #000;
     height: calc(100vh*1/64);
-    width: 7%;
+    width: 6.8%;
     transform: translate(calc(64vmin*0.5*0.0233), calc(-64vmin*7.25*0.0233))
 }
 
@@ -721,121 +723,122 @@ button {
 
 .block.jeans-outline1 {
     background-color: #000;
-    height: calc(100vh*16/64);
-    width: 2.333%;
+    height: calc(100vh*16.2/64);
+    width: 2.34%;
     transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*9.95*0.0233))
 }
 
 .block.jeans-outline2 {
     background-color: #000;
-    height: calc(100vh*16/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*2.48*0.0233), calc(64vmin*9.95*0.0233))
+    height: calc(100vh*16.2/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*2.48*0.0235), calc(64vmin*9.95*0.0233))
 }
 
 .block.hat-outline1 {
     background-color: var(--color-hat-outline);
     height: calc(100vh*1/64);
     width: 2.333%;
-    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*15.7*0.0233))
+    transform: translate(calc(-64vmin*1.55*0.023), calc(-64vmin*15.7*0.0233))
 }
 
 .block.hat-outline2 {
     background-color: var(--color-hat-outline);
     height: calc(100vh*3/64);
     width: 2.333%;
-    transform: translate(calc(-64vmin*2.55*0.0233), calc(-64vmin*17.8*0.0233))
+    transform: translate(calc(-64vmin*2.55*0.0227), calc(-64vmin*17.8*0.0233))
 }
 
 .block.hat-outline3 {
     background-color: var(--color-hat-outline);
-    height: calc(100vh*1/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*19.9*0.0233))
+    height: calc(100vh*1.08/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*1.55*0.023), calc(-64vmin*19.9*0.0233))
 }
 
 .block.hat-outline4 {
     background-color: var(--color-hat-outline);
     height: calc(100vh*1/64);
-    width: 4.666%;
-    transform: translate(calc(-64vmin*0*0.0233), calc(-64vmin*21*0.0233))
+    width: 4.69%;
+    transform: translate(calc(-64vmin*0*0.0233), calc(-64vmin*21*0.02328))
 }
 
 .block.shoe-outline1 {
     background-color: var(--color-shoe-outline);
     height: calc(100vh*3/64);
-    width: 2.333%;
+    width: 2.338%;
     transform: translate(calc(-64vmin*2.51*0.0233), calc(64vmin*22*0.0233))
 }
 
 .block.shoe-outline2 {
     background-color: var(--color-shoe-outline);
     height: calc(100vh*1/64);
-    width: 11.666%;
-    transform: translate(calc(64vmin*0.5*0.0233), calc(64vmin*23.1*0.0233))
+    width: 11.69%;
+    transform: translate(calc(64vmin*0.5*0.02326), calc(64vmin*23.1*0.02325))
 }
 
 .block.shoe-outline3 {
     background-color: var(--color-shoe-outline);
-    height: calc(100vh*1/64);
-    width: 2.333%;
-    transform: translate(calc(64vmin*1.5*0.0233), calc(64vmin*21*0.0233))
+    height: calc(100vh*1.1/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*1.5*0.02335), calc(64vmin*21*0.0233))
 }
 
 .block.shoe-outline4 {
     background-color: var(--color-shoe-outline);
     height: calc(100vh*1/64);
-    width: 2.333%;
-    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*22.05*0.0233))
+    width: 2.36%;
+    transform: translate(calc(64vmin*2.5*0.0235), calc(64vmin*22.05*0.02335))
 }
 
-.block.shoe-outline5 {
+
+/* .block.shoe-outline5 {
     background-color: var(--color-bg);
-    height: calc(100vh*1/64);
-    width: 2.34%;
-    transform: translate(calc(64vmin*2.53*0.0233), calc(64vmin*20.96*0.0233))
-}
+    height: calc(100vh*1.1/64);
+    width: 2.39%;
+    transform: translate(calc(64vmin*2.53*0.0233), calc(64vmin*20.96*0.02334))
+} */
 
 .block.hat-1 {
     background-color: var(--color-hat);
-    height: calc(100vh*3/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*1.55*0.0233), calc(-64vmin*17.8*0.0233))
+    height: calc(100vh*3.1/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*1.55*0.023), calc(-64vmin*17.8*0.0233))
 }
 
 .block.hat-2 {
     background-color: var(--color-hat);
-    height: calc(100vh*3/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*0.55*0.0233), calc(-64vmin*18.9*0.0233))
+    height: calc(100vh*2.97/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*0.55*0.023), calc(-64vmin*18.9*0.0233))
 }
 
 .block.hat-3 {
     background-color: var(--color-hat);
     height: calc(100vh*1.1/64);
-    width: 2.34%;
-    transform: translate(calc(64vmin*0.49*0.0233), calc(-64vmin*18.9*0.0233));
+    width: 2.4%;
+    transform: translate(calc(64vmin*0.49*0.02), calc(-64vmin*18.9*0.02335));
 }
 
 .block.hair-1 {
     background-color: var(--color-hair);
     height: calc(100vh*1/64);
-    width: 2.333%;
-    transform: translate(calc(64vmin*0.45*0.0233), calc(-64vmin*17.85*0.0233))
+    width: 2.35%;
+    transform: translate(calc(64vmin*0.45*0.02333), calc(-64vmin*17.85*0.02333))
 }
 
 .block.hair-2 {
     background-color: var(--color-hair);
-    height: calc(100vh*1/64);
-    width: 4.667%;
-    transform: translate(calc(64vmin*2*0.0233), calc(-64vmin*18.9*0.0233));
+    height: calc(100vh*1.07/64);
+    width: 4.9%;
+    transform: translate(calc(64vmin*2*0.0233), calc(-64vmin*18.9*0.02327));
 }
 
 .block.hand-1 {
     background-color: #000;
-    height: calc(100vh*6/64);
-    width: 2.333%;
-    transform: translate(calc(-64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
+    height: calc(100vh*6.1/64);
+    width: 2.34%;
+    transform: translate(calc(-64vmin*0.5*0.021), calc(-64vmin*3.55*0.0233));
 }
 
 .block.hand-2 {
@@ -854,42 +857,42 @@ button {
 
 .block.hand-4 {
     background-color: #000;
-    height: calc(100vh*5/64);
-    width: 2.333%;
-    transform: translate(calc(64vmin*1.5*0.0233), calc(-64vmin*4.08*0.0233));
+    height: calc(100vh*5.1/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*1.5*0.0234), calc(-64vmin*4.08*0.0232));
 }
 
 .block.hand-5 {
     background-color: #000;
     height: calc(100vh*3/64);
-    width: 2.3%;
-    transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*0.15*0.0233));
+    width: 2.4%;
+    transform: translate(calc(64vmin*2.5*0.0228), calc(64vmin*0.15*0.0233));
 }
 
 .block.hand-6 {
     background-color: #000;
-    height: calc(100vh*2/64);
-    width: 2.3%;
-    transform: translate(calc(64vmin*3.45*0.0233), calc(64vmin*2.75*0.0233));
+    height: calc(100vh*2.07/64);
+    width: 2.34%;
+    transform: translate(calc(64vmin*3.45*0.0234), calc(64vmin*2.75*0.0233));
 }
 
 .block.hand-fill-1 {
     background-color: var(--color-skin);
     height: calc(100vh*6/64);
-    width: 2.3%;
-    transform: translate(calc(64vmin*0.5*0.0233), calc(-64vmin*3.55*0.0233));
+    width: 2.34%;
+    transform: translate(calc(64vmin*0.5*0.02333), calc(-64vmin*3.55*0.0233));
 }
 
 .block.hand-fill-2 {
     background-color: var(--color-skin);
     height: calc(100vh*3.95/64);
-    width: 2.34%;
-    transform: translate(calc(64vmin*1.5*0.0233), calc(64vmin*0.65*0.0233));
+    width: 2.345%;
+    transform: translate(calc(64vmin*1.5*0.02333), calc(64vmin*0.65*0.0233));
 }
 
 .block.hand-fill-3 {
     background-color: var(--color-skin);
     height: calc(100vh*2/64);
-    width: 2.3%;
+    width: 2.33%;
     transform: translate(calc(64vmin*2.5*0.0233), calc(64vmin*2.75*0.0233));
 }
