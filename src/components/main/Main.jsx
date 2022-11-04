@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./main.css";
 
 export default function Main() {
-  const [version, setVersion] = useState("v4");
+  const [version, setVersion] = useState("v6");
 
   const changeVersion = (v) => {
     setVersion(v);
   };
+
+  const allVersions = ["v6", "v5", "v2", "v0", "v1", "v3", "v4"];
+
+  // var count = 0;
+  // setInterval(() => {
+  //   var ix = count % 7;
+  //   setVersion(allVersions[ix]);
+  //   console.log("count");
+  //   console.log(count);
+  //   console.log(allVersions[ix]);
+  //   count++;
+  // }, 5000);
 
   return (
     <div className="main">

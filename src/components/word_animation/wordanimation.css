@@ -1,0 +1,75 @@
+.name_animation_wrapper {
+    left: 50%;
+    top: 40%;
+    background-color: #9EB2E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.name {
+    font-size: 5rem;
+    font-weight: 800;
+    position: absolute;
+    letter-spacing: 0.2em;
+}
+
+.name_bottom {
+    font-size: 5rem;
+    font-weight: 800;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 7px;
+    letter-spacing: 0.2em;
+    position: absolute;
+}
+
+.name_animation_wrapper:hover #a {
+    animation-name: example;
+    animation-duration: 1.7s;
+    animation-delay: 0.7s;
+}
+
+.name_animation_wrapper:hover #b {
+    animation-name: example;
+    animation-duration: 1.3s;
+    animation-delay: 1.3s;
+}
+
+.name_animation_wrapper:hover #c {
+    animation-name: example;
+    animation-duration: 1.3s;
+    animation-delay: 1.6s;
+}
+
+.name_animation_wrapper:hover #d {
+    animation-name: example;
+    animation-duration: 1.3s;
+    animation-delay: 1.9s;
+}
+
+.name_animation_wrapper:hover #e {
+    animation-name: example;
+    animation-duration: 1.3s;
+    animation-delay: 2.2s;
+}
+
+.name_animation_wrapper:hover #f {
+    animation-name: example;
+    animation-duration: 1.3s;
+    animation-delay: 2.5s;
+}
+
+@keyframes example {
+    0% {
+        transform: translate(0px);
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: translate(-70px);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: translate(0px)
+    }
+}

@@ -1,11 +1,11 @@
-import { Navbar, Main } from "./components";
+import { Navbar, Main, WordAnimation } from "./components";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Main />
+      <WordAnimation />
     </div>
   );
 }
