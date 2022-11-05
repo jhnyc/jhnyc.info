@@ -3,6 +3,8 @@ import Folder from "./folder/Folder";
 import File from "./file/File";
 import Window from "./window/Window";
 import FileViewer from "./window/FileViewer";
+import Picture from "./picture/Picture";
+import "./desktop.css";
 
 export default function Desktop() {
   const [readmeIsOpen, setReadmeIsOpen] = useState(false);
@@ -45,6 +47,7 @@ export default function Desktop() {
 
   return (
     <div className="desktop">
+      <Picture />
       <File
         name={"readme.txt"}
         icon={"document"}

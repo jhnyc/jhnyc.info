@@ -4,7 +4,7 @@ import "./navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <p id="icon"></p>
+      <p id="icon">jhnyc.io/</p>
     </nav>
   );
 }

@@ -1,0 +1,35 @@
+.picture {
+    width: 170px;
+    height: 170px;
+}
+
+.icon img {
+    width: 135px;
+    height: 130px;
+    object-fit: cover;
+    border: 7px solid #fff;
+    box-sizing: border-box;
+}
+
+.picture .file_name {
+    padding-top: 10px;
+}
+
+.picture_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-120px);
+    z-index: 20
+}
+
+.picture button {
+    background-color: rgba(255, 255, 255, 0.568);
+    border: 2px solid rgb(233, 233, 233);
+    border-radius: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}

@@ -48,6 +48,11 @@
     font-size: 16px;
 }
 
+.window_body img {
+    max-width: 80%;
+    max-height: 90%;
+}
+
 .window.document-viewer {
     display: flex;
     height: 100%;
@@ -63,7 +68,7 @@
     width: 60%;
 }
 
-.window_sidebar-subheader {
+.window_subheader {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -71,10 +76,27 @@
 }
 
 .window_sidebar-file-container {
-    padding: 1rem;
-    overflow-y: scroll;
+    padding: 0.5rem;
 }
 
 .window_sidebar-file {
     height: 40px;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.window_sidebar-file img {
+    width: 25px;
+    margin-right: 1rem;
+}
+
+.window_sidebar-file:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+
+.window_info-container p {
+    margin: 1rem;
 }
