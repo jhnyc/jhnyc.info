@@ -1,11 +1,11 @@
-import { Navbar, Main, WordAnimation } from "./components";
+import { Navbar, Main, WordAnimation, Terminal, Desktop } from "./components";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <WordAnimation />
+      <Desktop />
     </div>
   );
 }

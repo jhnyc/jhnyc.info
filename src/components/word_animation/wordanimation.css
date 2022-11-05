@@ -13,6 +13,7 @@
     font-weight: 800;
     position: absolute;
     letter-spacing: 0.2em;
+    transition: 0.5s ease-in-out;
 }
 
 .name_bottom {

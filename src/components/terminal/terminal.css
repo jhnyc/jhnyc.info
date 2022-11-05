@@ -1,0 +1,56 @@
+.terminal_container {
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    left: 25%;
+    top: 15%;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    text-align: left;
+}
+
+.terminal_header {
+    position: relative;
+    height: 8%;
+    background-color: #EEEFEF;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+    padding-left: 1rem;
+}
+
+.terminal_header_button {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+}
+
+.terminal_body {
+    padding: 1rem;
+}
+
+.terminal_body p {
+    margin: 0px;
+    font-size: 16px;
+}
+
+input {
+    border: 0px;
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 73%;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
