@@ -32,7 +32,7 @@ export default function File(props) {
   };
 
   return (
-    <div className="file">
+    <div className="file" onClick={props.onClickHandler}>
       <div className="icon">
         <svg
           width="140"

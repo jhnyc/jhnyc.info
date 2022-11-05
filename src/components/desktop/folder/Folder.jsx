@@ -3,7 +3,7 @@ import "./folder.css";
 
 export default function Folder(props) {
   return (
-    <div className="folder">
+    <div className="folder" onClick={props.onClickHandler}>
       <div className="icon">
         <svg
           width="140"
