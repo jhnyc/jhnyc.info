@@ -11,9 +11,15 @@ export default function Desktop() {
   const [projectIsOpen, setProjectIsOpen] = useState(false);
   const [untitledIsOpen, setUntitledIsOpen] = useState(false);
   const [photographyIsOpen, setPhotographyIsOpen] = useState(false);
+  const [windowZIndex, setWindowZIndex] = useState([0, 0, 0, 0, 0]);
 
-  const OpenHandler = (setStateFunc) => {
+  const OpenHandler = (setStateFunc, index) => {
     setStateFunc(true);
+    setWindowZIndex(
+      windowZIndex.map((v, ix) =>
+        ix == index ? Math.max(...windowZIndex) + 1 : v
+      )
+    );
   };
 
   const readmeContent = () => {
@@ -47,15 +53,18 @@ export default function Desktop() {
 
   return (
     <div className="desktop">
-      <Picture />
+      <Picture zindex={windowZIndex[0]} />
       <File
         name={"readme.txt"}
         icon={"document"}
-        onClickHandler={() => OpenHandler(setReadmeIsOpen)}
+        onClickHandler={() => OpenHandler(setReadmeIsOpen, 1)}
       />
       <div
         className="readme window_container"
-        style={{ visibility: readmeIsOpen ? "visible" : "hidden" }}
+        style={{
+          visibility: readmeIsOpen ? "visible" : "hidden",
+          zIndex: windowZIndex[1],
+        }}
       >
         {" "}
         <Window title={"readme.txt"} content={readmeContent()} />
@@ -63,11 +72,14 @@ export default function Desktop() {
       <Folder
         name={"projects"}
         color={"#FFC700"}
-        onClickHandler={() => OpenHandler(setProjectIsOpen)}
+        onClickHandler={() => OpenHandler(setProjectIsOpen, 2)}
       />
       <div
         className="project window_container"
-        style={{ visibility: projectIsOpen ? "visible" : "hidden" }}
+        style={{
+          visibility: projectIsOpen ? "visible" : "hidden",
+          zIndex: windowZIndex[2],
+        }}
       >
         {" "}
         {/* <Window title={"projects/"} content={projectContent()} /> */}
@@ -76,11 +88,14 @@ export default function Desktop() {
       <Folder
         name={"untitled folder"}
         color={"#534FF7"}
-        onClickHandler={() => OpenHandler(setUntitledIsOpen)}
+        onClickHandler={() => OpenHandler(setUntitledIsOpen, 3)}
       />
       <div
         className="untitled window_container"
-        style={{ visibility: untitledIsOpen ? "visible" : "hidden" }}
+        style={{
+          visibility: untitledIsOpen ? "visible" : "hidden",
+          zIndex: windowZIndex[3],
+        }}
       >
         {" "}
         <Window title={"untitled folder/"} />
@@ -88,11 +103,14 @@ export default function Desktop() {
       <Folder
         name={"photography"}
         color={"#0DAB58"}
-        onClickHandler={() => OpenHandler(setPhotographyIsOpen)}
+        onClickHandler={() => OpenHandler(setPhotographyIsOpen, 4)}
       />
       <div
         className="photogrpahy window_container"
-        style={{ visibility: photographyIsOpen ? "visible" : "hidden" }}
+        style={{
+          visibility: photographyIsOpen ? "visible" : "hidden",
+          zIndex: windowZIndex[4],
+        }}
       >
         {" "}
         <Window title={"photography/"} />

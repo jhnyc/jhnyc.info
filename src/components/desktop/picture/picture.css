@@ -15,21 +15,32 @@
     padding-top: 10px;
 }
 
-.picture_buttons {
+
+/* .picture_buttons {
     width: 100%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-120px);
-    z-index: 20
-}
+} */
 
-.picture button {
-    background-color: rgba(255, 255, 255, 0.568);
-    border: 2px solid rgb(233, 233, 233);
+.picture_buttons button {
+    background-color: rgba(255, 255, 255, 0.702);
+    border: 2.5px solid black;
     border-radius: 50px;
+    width: 30px;
+    height: 30px;
     justify-content: center;
     display: flex;
     align-items: center;
     z-index: 10;
     cursor: pointer;
+    transform: translate(6px, -125px)
+}
+
+.picture_buttons #next_pic {
+    transform: translate(134px, -155px)
+}
+
+.picture_buttons polyline {
+    stroke-width: 4px;
 }
