@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Folder from "./folder/Folder";
 import File from "./file/File";
-import Window from "./window/Window";
+import WindowWrapper from "./window/WindowWrapper";
 import FileViewer from "./window/FileViewer";
 import Picture from "./picture/Picture";
+import Window from "./window/Window";
 import "./desktop.css";
 
 export default function Desktop() {
@@ -54,67 +55,31 @@ export default function Desktop() {
   return (
     <div className="desktop">
       <Picture zindex={windowZIndex[0]} />
-      <File
-        name={"readme.txt"}
+      <Window
+        window={"file"}
         icon={"document"}
-        onClickHandler={() => OpenHandler(setReadmeIsOpen, 1)}
+        title={"readme.txt"}
+        zIndex={1}
+        content={readmeContent()}
       />
-      <div
-        className="readme window_container"
-        style={{
-          visibility: readmeIsOpen ? "visible" : "hidden",
-          zIndex: windowZIndex[1],
-        }}
-      >
-        {" "}
-        <Window title={"readme.txt"} content={readmeContent()} />
-      </div>
-      <Folder
-        name={"projects"}
+      <Window
+        window={"folder"}
+        title={"projects"}
         color={"#FFC700"}
-        onClickHandler={() => OpenHandler(setProjectIsOpen, 2)}
+        zIndex={1}
       />
-      <div
-        className="project window_container"
-        style={{
-          visibility: projectIsOpen ? "visible" : "hidden",
-          zIndex: windowZIndex[2],
-        }}
-      >
-        {" "}
-        {/* <Window title={"projects/"} content={projectContent()} /> */}
-        <FileViewer title={"projects/"} />
-      </div>
-      <Folder
-        name={"untitled folder"}
+      <Window
+        window={"folder"}
+        title={"untitled folder"}
         color={"#534FF7"}
-        onClickHandler={() => OpenHandler(setUntitledIsOpen, 3)}
+        zIndex={1}
       />
-      <div
-        className="untitled window_container"
-        style={{
-          visibility: untitledIsOpen ? "visible" : "hidden",
-          zIndex: windowZIndex[3],
-        }}
-      >
-        {" "}
-        <Window title={"untitled folder/"} />
-      </div>
-      <Folder
-        name={"photography"}
+      <Window
+        window={"folder"}
+        title={"photography"}
         color={"#0DAB58"}
-        onClickHandler={() => OpenHandler(setPhotographyIsOpen, 4)}
+        zIndex={1}
       />
-      <div
-        className="photogrpahy window_container"
-        style={{
-          visibility: photographyIsOpen ? "visible" : "hidden",
-          zIndex: windowZIndex[4],
-        }}
-      >
-        {" "}
-        <Window title={"photography/"} />
-      </div>
       <File name={"linkedin"} icon={"internet"} />
       <File name={"github"} icon={"internet"} />
       <File name={"email"} icon={"email"} />

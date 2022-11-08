@@ -31,6 +31,10 @@
     margin-left: 10px;
 }
 
+.window_header_button:hover {
+    background-color: #ED6A5E;
+}
+
 .window_header_title {
     position: absolute;
     width: 100%;

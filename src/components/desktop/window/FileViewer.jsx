@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Window from "./Window";
+import Window from "./WindowWrapper";
 import FileIcon from "../../../assets/file_icon.svg";
 
 export default function FileViewer(props) {

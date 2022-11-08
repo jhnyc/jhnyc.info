@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Window from "../window/Window";
+import Window from "../window/WindowWrapper";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import "./picture.css";
 
