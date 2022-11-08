@@ -29,9 +29,10 @@
     border-radius: 20px;
     background-color: #D9D9D9;
     margin-left: 10px;
+    z-index: 10;
 }
 
-.window_header_button:hover {
+.window_header_button.close:hover {
     background-color: #ED6A5E;
 }
 

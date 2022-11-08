@@ -6,10 +6,17 @@ import "./picture.css";
 export default function Picture(props) {
   const [pictureIsOpen, setPictureIsOpen] = useState(false);
   const [currPicture, setCurrPicture] = useState(0);
+  const [zIndex, setZIndex] = useState(0);
 
   const allPictures = ["1.png", "2.png"];
 
   const OpenHandler = () => {
+    var currMaxZIndex = Math.max(
+      ...[...document.querySelectorAll(".window_container")].map(
+        (e) => e.style.zIndex
+      )
+    );
+    setZIndex(currMaxZIndex + 1);
     setPictureIsOpen(true);
   };
 
@@ -62,7 +69,7 @@ export default function Picture(props) {
         className="pic window_container"
         style={{
           visibility: pictureIsOpen ? "visible" : "hidden",
-          zIndex: props.zindex,
+          zIndex: zIndex,
         }}
       >
         {" "}

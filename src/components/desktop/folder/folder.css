@@ -5,6 +5,7 @@
 
 .folder:hover {
     outline: 2px solid blue;
+    cursor: pointer;
 }
 
 .folder_name {

@@ -5,6 +5,7 @@
 
 .file:hover {
     outline: 2px solid blue;
+    cursor: pointer;
 }
 
 .file_name {
