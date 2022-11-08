@@ -8,8 +8,20 @@ export default function WordAnimation() {
         <div className="name_bottom" id={`${id}`}>
           jhnyc.io
         </div>
-        <div className="name" id={`${id}`} style={{ color: `${color}` }}>
-          jhnyc.io
+        <div
+          className={`name ${id}`}
+          id={`${id}`}
+          style={{ color: `${color}` }}
+        >
+          {/* jhnyc.io */}
+          <text id="j">j</text>
+          <text id="h">h</text>
+          <text id="n">n</text>
+          <text id="y">y</text>
+          <text id="c">c</text>
+          <text id="d">.</text>
+          <text id="i">i</text>
+          <text id="o">o</text>
         </div>
       </>
     );
@@ -17,12 +29,12 @@ export default function WordAnimation() {
 
   return (
     <div className="name_animation_wrapper">
-      {singleWord("#534FF7", "f")}
-      {singleWord("#FFC700", "e")}
-      {singleWord("#0DAB58", "d")}
-      {singleWord("#2C92F0", "c")}
-      {singleWord("#D2197D", "b")}
-      {singleWord("white", "a")}
+      {singleWord("#534FF7", "sixth")}
+      {singleWord("#FFC700", "fifth")}
+      {singleWord("#0DAB58", "forth")}
+      {singleWord("#2C92F0", "third")}
+      {singleWord("#D2197D", "second")}
+      {singleWord("#84C3F2", "first")}
     </div>
   );
 }

@@ -25,37 +25,37 @@
     position: absolute;
 }
 
-.name_animation_wrapper:hover #a {
+.name_animation_wrapper:hover #first {
     animation-name: example;
-    animation-duration: 1.7s;
-    animation-delay: 0.7s;
+    animation-duration: 1.5s;
+    animation-delay: 0.9s;
 }
 
-.name_animation_wrapper:hover #b {
+.name_animation_wrapper:hover #second {
     animation-name: example;
     animation-duration: 1.3s;
     animation-delay: 1.3s;
 }
 
-.name_animation_wrapper:hover #c {
+.name_animation_wrapper:hover #third {
     animation-name: example;
     animation-duration: 1.3s;
     animation-delay: 1.6s;
 }
 
-.name_animation_wrapper:hover #d {
+.name_animation_wrapper:hover #forth {
     animation-name: example;
     animation-duration: 1.3s;
     animation-delay: 1.9s;
 }
 
-.name_animation_wrapper:hover #e {
+.name_animation_wrapper:hover #fifth {
     animation-name: example;
     animation-duration: 1.3s;
     animation-delay: 2.2s;
 }
 
-.name_animation_wrapper:hover #f {
+.name_animation_wrapper:hover #sixth {
     animation-name: example;
     animation-duration: 1.3s;
     animation-delay: 2.5s;
@@ -72,5 +72,72 @@
     }
     100% {
         transform: translate(0px)
+    }
+}
+
+.first #j {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 0.4s;
+}
+
+.first #h {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 1.2s;
+}
+
+.first #n {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+    animation-delay: 2s;
+}
+
+.first #y {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.35s;
+    animation-delay: 2.4s;
+}
+
+.first #c {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+    animation-delay: 2.75s;
+}
+
+.first #d {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.25s;
+    animation-delay: 3.05s;
+}
+
+.first #i {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.2s;
+    animation-delay: 3.3s;
+}
+
+.first #o {
+    animation-name: loading;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 3.5s;
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(0px);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: translate(0px);
+        color: white;
     }
 }

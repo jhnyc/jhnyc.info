@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Folder from "./folder/Folder";
 import File from "./file/File";
-import WindowWrapper from "./window/WindowWrapper";
-import FileViewer from "./window/FileViewer";
 import Picture from "./picture/Picture";
 import Window from "./window/Window";
 import "./desktop.css";
+import WordAnimation from "../word_animation/WordAnimation";
 
 export default function Desktop() {
   const [readmeIsOpen, setReadmeIsOpen] = useState(false);
@@ -83,6 +81,7 @@ export default function Desktop() {
       <File name={"linkedin"} icon={"internet"} />
       <File name={"github"} icon={"internet"} />
       <File name={"email"} icon={"email"} />
+      <WordAnimation />
     </div>
   );
 }
