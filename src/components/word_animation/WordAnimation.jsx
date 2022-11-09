@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./wordanimation.css";
 
 export default function WordAnimation() {
+  const [skipAnimation, setSkipAnimation] = useState("");
+
+  const skipAnimationHandler = () => {
+    setSkipAnimation("skip");
+  };
+
   const singleWord = (color, id) => {
     return (
       <>
@@ -28,7 +34,7 @@ export default function WordAnimation() {
   };
 
   return (
-    <div className="name_animation_wrapper">
+    <div className={`name_animation_wrapper ${skipAnimation}`}>
       <div className="backdrop b3"></div>
       <div className="backdrop b2"></div>
       <div className="backdrop b1"></div>
@@ -38,6 +44,9 @@ export default function WordAnimation() {
       {singleWord("#2C92F0", "third")}
       {singleWord("#D2197D", "second")}
       {singleWord("#534FF7", "first")}
+      <button id="skip_animation" onClick={skipAnimationHandler}>
+        skip fancy animation >>>
+      </button>
     </div>
   );
 }
