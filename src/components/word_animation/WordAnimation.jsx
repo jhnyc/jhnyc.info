@@ -29,12 +29,15 @@ export default function WordAnimation() {
 
   return (
     <div className="name_animation_wrapper">
+      <div className="backdrop b3"></div>
+      <div className="backdrop b2"></div>
+      <div className="backdrop b1"></div>
       {singleWord("#534FF7", "sixth")}
       {singleWord("#FFC700", "fifth")}
       {singleWord("#0DAB58", "forth")}
       {singleWord("#2C92F0", "third")}
       {singleWord("#D2197D", "second")}
-      {singleWord("#84C3F2", "first")}
+      {singleWord("#534FF7", "first")}
     </div>
   );
 }
