@@ -1,3 +1,10 @@
 .desktop {
     background-color: #84C4F2;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    padding: 4rem 8rem;
+    box-sizing: border-box;
 }
