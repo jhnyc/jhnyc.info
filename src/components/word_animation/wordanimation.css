@@ -25,53 +25,66 @@
     position: absolute;
 }
 
-.name_animation_wrapper:hover #first {
-    animation-name: example;
-    animation-duration: 1.5s;
-    animation-delay: 0.9s;
+.name_animation_wrapper #first {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 3.3s;
+    animation-delay: 3.5s;
 }
 
-.name_animation_wrapper:hover #second {
-    animation-name: example;
-    animation-duration: 1.3s;
-    animation-delay: 1.3s;
+.name_animation_wrapper #second {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 2.8s;
+    animation-delay: 3.9s;
 }
 
-.name_animation_wrapper:hover #third {
-    animation-name: example;
-    animation-duration: 1.3s;
-    animation-delay: 1.6s;
+.name_animation_wrapper #third {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 2.8s;
+    animation-delay: 4s;
 }
 
-.name_animation_wrapper:hover #forth {
-    animation-name: example;
-    animation-duration: 1.3s;
-    animation-delay: 1.9s;
+.name_animation_wrapper #forth {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 2.8s;
+    animation-delay: 4.1s;
 }
 
-.name_animation_wrapper:hover #fifth {
-    animation-name: example;
-    animation-duration: 1.3s;
-    animation-delay: 2.2s;
+.name_animation_wrapper #fifth {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 2.8s;
+    animation-delay: 4.2s;
 }
 
-.name_animation_wrapper:hover #sixth {
-    animation-name: example;
-    animation-duration: 1.3s;
-    animation-delay: 2.5s;
+.name_animation_wrapper #sixth {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.3, 1.9, 0.9, 2.1);
+    animation-duration: 2.8s;
+    animation-delay: 4.3s;
 }
 
-@keyframes example {
-    0% {
+@keyframes slide {
+    from {
         transform: translate(0px);
-        animation-timing-function: ease-in-out;
     }
-    50% {
-        transform: translate(-70px);
-        animation-timing-function: ease-in-out;
+    10% {
+        transform: translate(5px)
+    }
+    60% {
+        transform: translate(-45px)
     }
     100% {
-        transform: translate(0px)
+        transform: translate(940px)
     }
 }
 
@@ -114,21 +127,21 @@
     animation-name: loading;
     animation-fill-mode: forwards;
     animation-duration: 0.25s;
-    animation-delay: 3.05s;
+    animation-delay: 2.95s;
 }
 
 .first #i {
     animation-name: loading;
     animation-fill-mode: forwards;
     animation-duration: 0.2s;
-    animation-delay: 3.3s;
+    animation-delay: 3.1s;
 }
 
 .first #o {
     animation-name: loading;
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
-    animation-delay: 3.5s;
+    animation-delay: 3.2s;
 }
 
 @keyframes loading {
