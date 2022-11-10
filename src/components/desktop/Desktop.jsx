@@ -6,10 +6,6 @@ import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
 
 export default function Desktop() {
-  const [readmeIsOpen, setReadmeIsOpen] = useState(false);
-  const [projectIsOpen, setProjectIsOpen] = useState(false);
-  const [untitledIsOpen, setUntitledIsOpen] = useState(false);
-  const [photographyIsOpen, setPhotographyIsOpen] = useState(false);
   const [windowZIndex, setWindowZIndex] = useState([0, 0, 0, 0, 0]);
 
   const OpenHandler = (setStateFunc, index) => {
@@ -52,32 +48,17 @@ export default function Desktop() {
 
   return (
     <div className="desktop">
-      <Picture zindex={windowZIndex[0]} />
+      <Window window={"picture"} />
       <Window
         window={"file"}
         icon={"document"}
         title={"readme.txt"}
-        zIndex={1}
         content={readmeContent()}
       />
-      <Window
-        window={"folder"}
-        title={"projects"}
-        color={"#FFC700"}
-        zIndex={1}
-      />
-      <Window
-        window={"folder"}
-        title={"untitled folder"}
-        color={"#534FF7"}
-        zIndex={1}
-      />
-      <Window
-        window={"folder"}
-        title={"photography"}
-        color={"#0DAB58"}
-        zIndex={1}
-      />
+      <Window window={"folder"} title={"projects"} color={"#FFC700"} />
+      <Window window={"folder"} title={"untitled folder"} color={"#534FF7"} />
+      <Window window={"folder"} title={"photography"} color={"#0DAB58"} />
+      <Window window={"terminal"} title={"terminal"} />
       <File name={"linkedin"} icon={"internet"} />
       <File name={"github"} icon={"internet"} />
       <File name={"email"} icon={"email"} />

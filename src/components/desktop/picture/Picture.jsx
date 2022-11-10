@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Window from "../window/WindowWrapper";
+import WindowWrapper from "../window/WindowWrapper";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import "./picture.css";
 
@@ -73,7 +73,11 @@ export default function Picture(props) {
         }}
       >
         {" "}
-        <Window title={"profile_pic.png"} content={pictureContent()} />
+        <WindowWrapper
+          title={"profile_pic.png"}
+          content={pictureContent()}
+          closeHandler={props.closeHandler}
+        />
       </div>
     </>
   );

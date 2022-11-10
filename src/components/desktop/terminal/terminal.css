@@ -1,0 +1,17 @@
+#input {
+    border-right: 10px solid #000;
+    animation: cursorblink 1.3s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+    caret-color: transparent;
+    height: calc(1rem - 2px);
+}
+
+#input:focus,
+#input:active {
+    outline: none;
+}
+
+@keyframes cursorblink {
+    50% {
+        border-color: white;
+    }
+}

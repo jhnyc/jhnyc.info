@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Window from "./WindowWrapper";
+import WindowWrapper from "./WindowWrapper";
 import FileIcon from "../../../assets/file_icon.svg";
 
 export default function FileViewer(props) {
@@ -106,7 +106,11 @@ export default function FileViewer(props) {
 
   return (
     <div>
-      <Window title={props.title} content={Viewer()} />
+      <WindowWrapper
+        title={props.title}
+        content={Viewer()}
+        closeHandler={props.closeHandler}
+      />
     </div>
   );
 }

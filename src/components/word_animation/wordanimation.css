@@ -28,6 +28,7 @@
     to {
         opacity: 0;
         display: none;
+        visibility: hidden;
     }
 }
 
@@ -41,13 +42,28 @@
     font-size: 1.1rem;
     font-weight: bold;
     border: 3px solid #000;
-    background-color: #FFC700;
+    background-color: #534FF7;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    animation-name: hide_skip_animation;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 5s;
 }
 
 #skip_animation:hover {
     transform: scale(1.03);
+    background-color: #FFC700;
+}
+
+@keyframes hide_skip_animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
 }
 
 @keyframes hideanimation {
