@@ -37,6 +37,9 @@
     align-items: center;
     cursor: pointer;
     border-radius: 7px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .window_sidebar-file img {

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import File from "./file/File";
-import Picture from "./picture/Picture";
+import File from "./desktopicons/FileIcon";
 import Window from "./window/Window";
 import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
+import projectsData from "../../assets/documents/projects.json";
 
 export default function Desktop() {
   const [windowZIndex, setWindowZIndex] = useState([0, 0, 0, 0, 0]);
@@ -55,7 +55,12 @@ export default function Desktop() {
         title={"readme.txt"}
         content={readmeContent()}
       />
-      <Window window={"folder"} title={"projects"} color={"#FFC700"} />
+      <Window
+        window={"folder"}
+        title={"projects"}
+        color={"#FFC700"}
+        data={projectsData}
+      />
       <Window window={"folder"} title={"untitled folder"} color={"#534FF7"} />
       <Window window={"folder"} title={"photography"} color={"#0DAB58"} />
       <Window window={"terminal"} title={"terminal"} />

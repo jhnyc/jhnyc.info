@@ -6,11 +6,11 @@ import "./fileviewer.css";
 export default function FileViewer(props) {
   const [selectedFile, setSelectedFile] = useState(0);
 
-  const data = [
+  const dummy_data = [
     {
       document: "test.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description:
           "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
         link: "www.example.com",
@@ -19,7 +19,7 @@ export default function FileViewer(props) {
     {
       document: "aiojdeaslkdm.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description: "sadfjsunghruihrojoiepowkdeopk",
         link: "www.example.com",
       },
@@ -27,7 +27,7 @@ export default function FileViewer(props) {
     {
       document: "addfsgs.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description: "siduheiojref.",
         link: "www.example.com",
       },
@@ -35,7 +35,7 @@ export default function FileViewer(props) {
     {
       document: "test.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description:
           "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
         link: "www.example.com",
@@ -44,7 +44,7 @@ export default function FileViewer(props) {
     {
       document: "test.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description:
           "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
         link: "www.example.com",
@@ -53,13 +53,15 @@ export default function FileViewer(props) {
     {
       document: "test.txt",
       info: {
-        name: "dsjobs.io",
+        name: "test",
         description:
           "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
         link: "www.example.com",
       },
     },
   ];
+
+  const data = props.data ? props.data : dummy_data;
 
   const selectHandler = (ix) => {
     setSelectedFile(ix);

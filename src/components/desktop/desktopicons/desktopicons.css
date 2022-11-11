@@ -1,10 +1,16 @@
-.file {
+.file,
+.folder,
+.picture,
+.terminal {
     width: 170px;
     height: 170px;
 }
 
-.file:hover {
-    outline: 2px solid blue;
+.file:hover,
+.folder:hover,
+.picture:hover,
+.terminal:hover {
+    outline: 2px solid #0B8CE9;
     cursor: pointer;
 }
 

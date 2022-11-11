@@ -20,7 +20,14 @@
     opacity: 0;
     animation-name: delay;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
+}
+
+.input.true {
+    opacity: 0;
+    animation-name: delay;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 }
 
 @keyframes delay {

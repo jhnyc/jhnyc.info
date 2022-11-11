@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WindowWrapper from "../window/WindowWrapper";
 import { GrPrevious, GrNext } from "react-icons/gr";
+import "./picture.css";
 
 export default function PictureViewer(props) {
   const [currPicture, setCurrPicture] = useState(0);

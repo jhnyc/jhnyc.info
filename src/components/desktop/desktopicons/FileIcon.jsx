@@ -1,5 +1,5 @@
 import React from "react";
-import "./file.css";
+import "./desktopicons.css";
 
 export default function File(props) {
   const renderIcon = (icon) => {

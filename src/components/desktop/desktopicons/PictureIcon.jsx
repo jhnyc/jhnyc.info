@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrPrevious, GrNext } from "react-icons/gr";
+import "./desktopicons.css";
 
 export default function PictureIcon(props) {
   const [currPicture, setCurrPicture] = useState(0);
@@ -20,17 +21,17 @@ export default function PictureIcon(props) {
       <div className="icon" onClick={props.onClickHandler}>
         <img
           src={require(`../../../assets/pictures/${allPictures[currPicture]}`)}
-        />
-      </div>
-      <p className="file_name">profile_pic.png</p>
+        />{" "}
+      </div>{" "}
+      <p className="file_name"> profile_pic.png </p>{" "}
       <div className="picture_buttons">
         <button id="previous_pic" onClick={prevHandler}>
           <GrPrevious />
-        </button>
+        </button>{" "}
         <button id="next_pic" onClick={nextHandler}>
           <GrNext />
-        </button>
-      </div>
+        </button>{" "}
+      </div>{" "}
     </div>
   );
 }

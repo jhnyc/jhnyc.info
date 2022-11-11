@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import Folder from "../folder/Folder";
 import FileViewer from "./FileViewer";
-import File from "../file/File";
+import File from "../desktopicons/FileIcon";
 import WindowWrapper from "./WindowWrapper";
-import PictureIcon from "../picture/PictureIcon";
+import PictureIcon from "../desktopicons/PictureIcon";
 import PictureViewer from "../picture/PictureViewer";
-import TerminalIcon from "../terminal/TerminalIcon";
+import TerminalIcon from "../desktopicons/TerminalIcon";
 import Terminal from "../terminal/Terminal";
 
 export default function Window(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [zIndex, setZIndex] = useState(0);
   const [terminalStartUp, setTerminalStartUp] = useState(false);
-  const [XY, setXY] = useState([0, 0]);
+  const [startDragXY, setStartDragXY] = useState([0, 0]);
   const [translateXY, setTranslateXY] = useState([0, 0]);
+  const [prevTranslateXY, setPrevTranslateXY] = useState([0, 0]);
 
   const OpenHandler = () => {
     var currMaxZIndex = Math.max(
@@ -45,13 +46,17 @@ export default function Window(props) {
     img.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
     e.dataTransfer.setDragImage(img, 0, 0);
-    setXY([e.clientX, e.clientY]);
+    setStartDragXY([e.clientX, e.clientY]);
+    setPrevTranslateXY([translateXY[0], translateXY[1]]);
   };
 
   const DragHandler = (e) => {
     e.preventDefault();
     if (e.clientX != 0 && e.clientY != 0) {
-      setTranslateXY([e.clientX - XY[0], e.clientY - XY[1]]);
+      setTranslateXY([
+        prevTranslateXY[0] + e.clientX - startDragXY[0],
+        prevTranslateXY[1] + e.clientY - startDragXY[1],
+      ]);
     }
   };
 
@@ -90,7 +95,7 @@ export default function Window(props) {
           />
         );
       case "picture":
-        return <PictureIcon onClickHandler={OpenHandler} pictures />;
+        return <PictureIcon onClickHandler={OpenHandler} />;
     }
   };
 
@@ -99,9 +104,10 @@ export default function Window(props) {
       case "folder":
         return (
           <FileViewer
-            title={props.title}
+            title={props.title + "/"}
             content={props.content}
             closeHandler={closeHandler}
+            data={props.data}
           />
         );
       case "file":
@@ -115,8 +121,8 @@ export default function Window(props) {
       case "terminal":
         return (
           <Terminal
-            closeHandler={closeHandler}
             title={props.title}
+            closeHandler={closeHandler}
             startUp={terminalStartUp}
           />
         );

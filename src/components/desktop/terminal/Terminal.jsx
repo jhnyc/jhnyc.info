@@ -45,18 +45,19 @@ export default function Terminal(props) {
           use zsh, please run `chsh -s /bin/zsh`. For more details, please visit
           https://support.apple.com/kb/HT208050.
         </p>
-        {/* <p className={`intro2 ${props.startUp}`}>
-          jhnyc.io:~ admin$ sudo apt-get update
-        </p> */}
+
         {renderOutput()}
-        <label htmlFor="input">jhnyc.io:~ admin$</label>
-        <input
-          id="input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={enterCommand}
-          style={{ width: `${input.length}ch` }}
-        />
+        <div className={`input ${props.startUp}`}>
+          <label htmlFor="input">jhnyc.io:~ admin$</label>
+          <input
+            id="input"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={enterCommand}
+            autocomplete="off"
+            style={{ width: `${input.length}ch` }}
+          />
+        </div>
       </div>
     );
   };

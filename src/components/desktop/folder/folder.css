@@ -1,13 +1,3 @@
-.folder {
-    width: 170px;
-    height: 170px;
-}
-
-.folder:hover {
-    outline: 2px solid blue;
-    cursor: pointer;
-}
-
 .folder_name {
     font-size: 1rem;
     margin-top: -5px;
