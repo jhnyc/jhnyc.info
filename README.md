@@ -1,3 +1,1 @@
-# Personal Site
-
-Just playing with cool landing page effects.
+Just fiddling around with javascript, html and css.
