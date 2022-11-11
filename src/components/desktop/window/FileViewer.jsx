@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WindowWrapper from "./WindowWrapper";
 import FileIcon from "../../../assets/file_icon.svg";
+import "./fileviewer.css";
 
 export default function FileViewer(props) {
   const [selectedFile, setSelectedFile] = useState(0);
@@ -66,7 +67,7 @@ export default function FileViewer(props) {
 
   const Viewer = () => {
     return (
-      <div className="window document-viewer">
+      <div className="document-viewer">
         <div className="window_sidebar">
           <div className="window_subheader">Documents</div>
           <div className="window_sidebar-file-container">

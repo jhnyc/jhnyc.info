@@ -1,0 +1,53 @@
+.document-viewer {
+    display: flex;
+    height: 100%;
+}
+
+.window_sidebar {
+    width: 40%;
+    height: 100%;
+    border-right: 3px solid black;
+}
+
+.window_info {
+    width: 60%;
+}
+
+.window_subheader {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid black;
+}
+
+.window_sidebar-file-container {
+    padding: 0.5rem;
+    overflow: scroll;
+}
+
+.window_sidebar-file-container::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.window_sidebar-file {
+    height: 40px;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.window_sidebar-file img {
+    width: 25px;
+    margin-right: 1rem;
+}
+
+.window_sidebar-file:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+
+.window_info-container p {
+    margin: 1rem;
+}

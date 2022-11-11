@@ -13,7 +13,7 @@ export default function Terminal(props) {
       setCommandHistory([...commandHistory, input]);
       const output = CmdOutput[input]
         ? CmdOutput[input].replaceAll("\n", "</span><br /><span>")
-        : `${input}: command not found`;
+        : `-bash: ${input.split(" ")[0]}: command not found`;
       setOutputHistory([...outputHistory, output]);
       setInput("");
     }
@@ -40,12 +40,14 @@ export default function Terminal(props) {
     return (
       <div className="terminal_body">
         <p>Last login: Wed Nov 2 10:15:55</p>
-        <p>
+        <p className={`intro1 ${props.startUp}`}>
           The default interactive shell is now zsh. To update your account to
           use zsh, please run `chsh -s /bin/zsh`. For more details, please visit
           https://support.apple.com/kb/HT208050.
         </p>
-        <p>jhnyc.io:~ admin$ sudo apt-get update</p>
+        {/* <p className={`intro2 ${props.startUp}`}>
+          jhnyc.io:~ admin$ sudo apt-get update
+        </p> */}
         {renderOutput()}
         <label htmlFor="input">jhnyc.io:~ admin$</label>
         <input
