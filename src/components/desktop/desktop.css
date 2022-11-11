@@ -1,5 +1,16 @@
 .desktop {
-    background-color: #84C4F2;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    box-sizing: border-box;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.desktop_container {
+    top: 10px;
     display: flex;
     justify-content: flex-start;
     -webkit-flex-wrap: wrap;
@@ -7,4 +18,56 @@
     gap: 1rem 2rem;
     padding: 4rem 8rem;
     box-sizing: border-box;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.bg {
+    height: calc(91.5vh);
+    width: 100vw;
+    position: absolute;
+    width: 100vw;
+    left: 0px;
+    top: 8.5vh;
+}
+
+.bg[animate='1'] {
+    position: absolute;
+    left: 0px;
+    animation-name: expand;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.3s;
+}
+
+@keyframes expand {
+    from {
+        width: 0vw;
+    }
+    100% {
+        width: 100vw;
+        height: calc(92.1vh);
+    }
+}
+
+#changeBg {
+    position: absolute;
+    background-color: transparent;
+    border: 0px;
+    right: 2rem;
+    top: 45%;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+#changeBg polyline {
+    stroke: rgba(219, 219, 219, 0.685);
+}
+
+#changeBg:hover polyline {
+    stroke: rgb(244, 244, 244);
+}
+
+#changeBg:hover {
+    transform: scale(1.2)
 }
