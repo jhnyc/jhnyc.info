@@ -21,6 +21,13 @@
     --color-navy: #1E3471;
     --color-skyblue: #84C4F2;
     --color-pink: #D2197D;
+    --color-fontcolor: black;
+    --color-windowbg: white;
+    --color-windowheader: #EEEFEF;
+    --color-windowheaderbutton: #D9D9D9;
+    --color-sidebaralternate: #F5F5F5;
+    --color-navbarfontcolor: black;
+    --color-navbarbg: #EBEBEB;
 }
 
 body {
