@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import WindowWrapper from "../window/WindowWrapper";
 import CmdOutput from "./CmdOutput";
 import "./terminal.css";
@@ -7,6 +7,7 @@ export default function Terminal(props) {
   const [commandHistory, setCommandHistory] = useState([]);
   const [outputHistory, setOutputHistory] = useState([]);
   const [input, setInput] = useState("");
+  const inputRef = useRef(null);
 
   const enterCommand = (e) => {
     if (e.key == "Enter") {
@@ -25,20 +26,21 @@ export default function Terminal(props) {
 
   const renderOutput = () => {
     return commandHistory.map((c, i) => (
-      <>
+      <div>
         <span>jhnyc.io:~ admin$</span>
         <span>&nbsp;</span>
         <span>{c}</span>
         <br />
         <span dangerouslySetInnerHTML={{ __html: outputHistory[i] }}></span>
         <br />
-      </>
+      </div>
     ));
   };
 
   const renderTerminal = () => {
     return (
-      <div className="terminal_body">
+      <div className="terminal_body" onClick={() => inputRef.current.focus()}>
+        {/* <button > test</button> */}
         <p>Last login: Wed Nov 2 10:15:55</p>
         <p className={`intro1 ${props.startUp}`}>
           The default interactive shell is now zsh. To update your account to
@@ -54,8 +56,10 @@ export default function Terminal(props) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={enterCommand}
+            autoFocus
             autocomplete="off"
             style={{ width: `${input.length}ch` }}
+            ref={inputRef}
           />
         </div>
       </div>
