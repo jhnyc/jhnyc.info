@@ -95,11 +95,22 @@ export default function FileViewer(props) {
           <div className="window_subheader">Info</div>
           <div className="window_info-container">
             {Object.entries(data[selectedFile].info).map((element) => {
-              return (
-                <p>
-                  {element[0]}: {element[1]}
-                </p>
-              );
+              if (element[0] == "Image") {
+                return (
+                  <div className="project_image">
+                    {" "}
+                    <img
+                      src={require(`../../../assets/projects_images/${element[1]}`)}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <p>
+                    {element[0]}: {element[1]}
+                  </p>
+                );
+              }
             })}
           </div>
         </div>

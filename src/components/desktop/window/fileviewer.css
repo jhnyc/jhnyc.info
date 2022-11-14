@@ -51,6 +51,21 @@
     background-color: var(--color-sidebaralternate);
 }
 
+.window_info-container {
+    overflow-y: scroll;
+    height: 85%;
+}
+
 .window_info-container p {
     margin: 1rem;
+}
+
+.project_image {
+    margin: 1rem;
+}
+
+.project_image img {
+    max-width: 100%;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px px rgba(0, 0, 0, 0.371));
 }
