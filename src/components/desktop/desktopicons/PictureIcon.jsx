@@ -24,14 +24,14 @@ export default function PictureIcon(props) {
         />{" "}
       </div>{" "}
       <p className="file_name"> profile_pic.png </p>{" "}
-      <div className="picture_buttons">
+      {/* <div className="picture_buttons">
         <button id="previous_pic" onClick={prevHandler}>
           <GrPrevious />
         </button>{" "}
         <button id="next_pic" onClick={nextHandler}>
           <GrNext />
         </button>{" "}
-      </div>{" "}
+      </div>{" "} */}
     </div>
   );
 }

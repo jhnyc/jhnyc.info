@@ -5,7 +5,7 @@ import "./picture.css";
 
 export default function PictureViewer(props) {
   const [currPicture, setCurrPicture] = useState(0);
-  const allPictures = ["profile_pic_1.png", "profile_pic_2.png"];
+  const allPictures = ["profile_pic_1.png", "profile_pic_2.png", "name.png"];
   const prevHandler = () => {
     currPicture == 0
       ? setCurrPicture(allPictures.length - 1)
@@ -20,15 +20,19 @@ export default function PictureViewer(props) {
   const pictureContent = () => {
     return (
       <>
-        <img
-          src={require(`../../../assets/pictures/${allPictures[currPicture]}`)}
-        />
-        <button id="previous_pic" onClick={prevHandler}>
-          <GrPrevious />
-        </button>
-        <button id="next_pic" onClick={nextHandler}>
-          <GrNext />
-        </button>
+        <div className="picture_container">
+          <img
+            src={require(`../../../assets/pictures/${allPictures[currPicture]}`)}
+          />
+        </div>
+        <div className="button_container">
+          <button id="previous" onClick={prevHandler}>
+            <GrPrevious size={22} />
+          </button>
+          <button id="next" onClick={nextHandler}>
+            <GrNext size={22} />
+          </button>
+        </div>
       </>
     );
   };

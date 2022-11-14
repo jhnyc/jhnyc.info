@@ -3,11 +3,11 @@
     grid-row: 1/2;
     background-color: var(--color-navbarbg);
     border-bottom: 3px solid #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
     text-align: left;
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .navbar p {
@@ -24,7 +24,7 @@
     cursor: pointer;
     position: absolute;
     right: 10%;
-    padding-top: 0.5rem;
+    padding-top: 0.3rem;
 }
 
 

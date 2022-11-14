@@ -35,7 +35,7 @@ export default function Navbar() {
         {darkmode ? (
           <MdOutlineDarkMode size={25} color={"white"} />
         ) : (
-          <MdDarkMode size={25} />
+          <MdDarkMode size={25} color={"#272727"} />
         )}
       </button>
     </nav>

@@ -23,12 +23,11 @@
 }
 
 .bg {
-    height: calc(91.5vh);
+    height: calc(100vh * 12/13);
     width: 100vw;
     position: absolute;
-    width: 100vw;
     left: 0px;
-    top: 8.5vh;
+    top: calc(100vh * 1/13);
 }
 
 .bg[animate='1'] {

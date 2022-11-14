@@ -46,9 +46,21 @@ export default function Desktop() {
     );
   };
 
-  const bgColors = ["#84C4F2", "#FFC700", "#534FF7", "F5F5F5"];
+  const bgColors = [
+    "#84C4F2",
+    // "#FFC700",
+    "#f7d863",
+    // "#534FF7",
+    "#a5a4e0",
+    "#67b88c",
+    "#e3b8bf",
+    "#97a8c2",
+    "#263145",
+    "#091B33",
+  ];
 
   const colorHandler = () => {
+    console.log((color + 1) % bgColors.length);
     setColor(color + 1);
     setAnimate(1);
   };
@@ -56,7 +68,10 @@ export default function Desktop() {
   return (
     <div
       className="desktop"
-      style={{ backgroundColor: bgColors[(color - 1) % bgColors.length] }}
+      style={{
+        backgroundColor:
+          bgColors[(color - 1 >= 0 ? color - 1 : 0) % bgColors.length],
+      }}
     >
       <button id="changeBg" style={{ zIndex: "20" }} onClick={colorHandler}>
         <GrNext size={35} />
@@ -86,8 +101,12 @@ export default function Desktop() {
         <Window window={"folder"} title={"untitled folder"} color={"#534FF7"} />
         <Window window={"folder"} title={"photography"} color={"#0DAB58"} />
         <Window window={"terminal"} title={"terminal"} />
-        <File name={"linkedin"} icon={"internet"} />
-        <File name={"github"} icon={"internet"} />
+        <a href="https://www.linkedin.com/in/johnny-chau/" target="_blank">
+          <File name={"linkedin"} icon={"internet"} />
+        </a>
+        <a href="https://github.com/jhnyc" target="_blank">
+          <File name={"github"} icon={"internet"} />
+        </a>
         <File name={"email"} icon={"email"} />
         <WordAnimation />
       </div>

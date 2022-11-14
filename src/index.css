@@ -16,10 +16,11 @@
     --color-shoe-outline: #E4E4E4;
     --color-orange: #F4745A;
     --color-green: #0DAB58;
-    --color-purple: #5551FE;
-    --color-yellow: #F6C100;
+    --color-purple: #534FF7;
+    --color-yellow: #FFC700;
     --color-navy: #1E3471;
     --color-skyblue: #84C4F2;
+    --color-blue: #0B8CE9;
     --color-pink: #D2197D;
     --color-fontcolor: black;
     --color-windowbg: white;
@@ -35,6 +36,14 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 code {
