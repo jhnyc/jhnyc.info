@@ -1,0 +1,41 @@
+.cmatrix {
+    color: #58DC83;
+    /* color: #01FF00; */
+    background-color: #272A36;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cmatrix text {
+    opacity: 0;
+}
+
+@keyframes react-fade-in {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes react-fade-out {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

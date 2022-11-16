@@ -87,7 +87,7 @@
     animation-name: slidebackdrop;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.53, .02, .05, .99);
-    animation-duration: 1.2s;
+    animation-duration: 1.4s;
     animation-delay: 4.4s;
 }
 
@@ -96,7 +96,7 @@
     animation-name: slidebackdrop;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.53, .02, .05, .99);
-    animation-duration: 1.2s;
+    animation-duration: 1.4s;
     animation-delay: 4.7s;
 }
 
@@ -105,7 +105,7 @@
     animation-name: slidebackdrop;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.53, .02, .05, .99);
-    animation-duration: 1.2s;
+    animation-duration: 1.4s;
     animation-delay: 5s;
 }
 
@@ -188,8 +188,8 @@
     from {
         transform: translate(0px);
     }
-    10% {
-        transform: translate(5px)
+    15% {
+        transform: translate(3px)
     }
     50% {
         transform: translate(-60px)
