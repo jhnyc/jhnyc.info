@@ -29,7 +29,7 @@ export default function Terminal(props) {
         break;
       case command == "cmatrix":
         setDisplayCMatrix(true);
-        return "";
+        return null;
     }
   };
 
@@ -65,8 +65,14 @@ export default function Terminal(props) {
         <span>&nbsp;</span>
         <span>{c}</span>
         <br />
-        <span dangerouslySetInnerHTML={{ __html: outputHistory[i] }}></span>
-        <br />
+        {outputHistory[i] === null ? (
+          ""
+        ) : (
+          <>
+            <span dangerouslySetInnerHTML={{ __html: outputHistory[i] }}></span>
+            <br />
+          </>
+        )}
       </div>
     ));
   };
