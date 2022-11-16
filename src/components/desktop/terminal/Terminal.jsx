@@ -23,16 +23,13 @@ export default function Terminal(props) {
         setCurDir(command.split(" ")[1]);
         break;
       case command.startsWith("echo "):
-        return command
-          .split(" ")
-          .slice(1, command.split(" ").length - 1)
-          .join(" ");
+        return command.split(" ").slice(1, command.split(" ").length).join(" ");
       case command == "ls":
         console.log("ls");
         break;
       case command == "cmatrix":
         setDisplayCMatrix(true);
-        break;
+        return "";
     }
   };
 
@@ -45,10 +42,13 @@ export default function Terminal(props) {
   const enterCommand = (e) => {
     if (e.key == "Enter") {
       setCommandHistory([...commandHistory, input]);
-      commandAction(input);
-      const output = CmdOutput[input]
-        ? CmdOutput[input].replaceAll("\n", "</span><br /><span>")
-        : `-bash: ${input.split(" ")[0]}: command not found`;
+      const commandActionOutput = commandAction(input);
+      var output =
+        commandActionOutput === undefined
+          ? CmdOutput[input]
+            ? CmdOutput[input].replaceAll("\n", "</span><br /><span>")
+            : `-bash: ${input.split(" ")[0]}: command not found`
+          : commandActionOutput;
       setOutputHistory([...outputHistory, output]);
       setInput("");
     }
