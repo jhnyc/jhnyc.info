@@ -12,6 +12,7 @@ export default function Terminal(props) {
   const [curDir, setCurDir] = useState("");
   const [width, setWidth] = useState(720);
   const [height, setHeight] = useState(500);
+  const [date, setDate] = useState(new Date());
   const [displayCMatrix, setDisplayCMatrix] = useState(false);
   const inputRef = useRef(null);
   const ref = useRef(null);
@@ -85,7 +86,10 @@ export default function Terminal(props) {
           ref={ref}
           onClick={() => inputRef.current.focus()}
         >
-          <p>Last login: Wed Nov 2 10:15:55</p>
+          <p>
+            Last login: {date.toDateString().slice(0, -5)}{" "}
+            {date.toTimeString().slice(0, 8)}
+          </p>
           <p className={`intro1 ${props.startUp}`}>
             The default interactive shell is now zsh. To update your account to
             use zsh, please run `chsh -s /bin/zsh`. For more details, please

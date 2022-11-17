@@ -52,8 +52,8 @@ export default function Desktop() {
         <br />
         <p>
           Tech Stack: As long as the problem at hand is interesting enough, I'll
-          find a way to hack things together. But my no.1 go-to is definitely
-          Python.
+          find a way to hack things together. But definitely I Python where I
+          can.
         </p>
       </div>
     );
