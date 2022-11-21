@@ -68,7 +68,7 @@ export default function Desktop() {
     "#67b88c",
     "#e3b8bf",
     "#97a8c2",
-    "#263145",
+    "#272A36",
     "#091B33",
   ];
 
