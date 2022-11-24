@@ -1,60 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import File from "./desktopicons/FileIcon";
 import Window from "./window/Window";
 import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
 import projectsData from "../../assets/documents/projects.json";
 import { GrNext } from "react-icons/gr";
+import readme from "../../assets/documents/readme.txt";
 
 export default function Desktop() {
   const [color, setColor] = useState(0);
   const [animate, setAnimate] = useState(0);
+  const [readmeText, setReadmeText] = useState("");
+
+  useEffect(() => {
+    fetch(readme)
+      .then((res) => res.text())
+      .then((res) => setReadmeText(res));
+  }, []);
 
   const readmeContent = () => {
     return (
       <div style={{ padding: "1rem" }}>
-        {/* <p>
-          ----------------------------------------------------------------------
-        </p> */}
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)&nbsp;/_&nbsp;&nbsp;____&nbsp;&nbsp;__&nbsp;&nbsp;_______&nbsp;&nbsp;(_)___&nbsp;
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;/&nbsp;__&nbsp;\/&nbsp;__&nbsp;\/&nbsp;/&nbsp;/&nbsp;/&nbsp;___/&nbsp;/&nbsp;/&nbsp;__&nbsp;\
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/&nbsp;/_/&nbsp;/&nbsp;/___&nbsp;/&nbsp;/&nbsp;/_/&nbsp;/
-          <br />
-          &nbsp;__/&nbsp;/_/&nbsp;/_/_/&nbsp;/_/\__,&nbsp;/\___(_)_/\____/&nbsp;
-          <br />
-          /___/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/____/
-          <br />
-        </p>
-        <br />
-        <p>--------------------------------------------------------------</p>
-        <br />
-        <p>Name: Johnny Chau</p>
-        <br />
-        <p>Location: San Francisco &lt; Hong Kong </p>
-        <br />
-        <p>Currently: </p>
-        <p>&emsp; - Student @ USF MS Data Science</p>
-        <p>&emsp; - ML Intern @ Atlassian</p>
-        <br />
-        <p>Previously: </p>
-        <p>&emsp; - BBA Accounting & Finance @ HKU</p>
-        <p>&emsp; - Consultant @ EY</p>
-        <br />
-        <p>
-          Description: Data scientist/machine learning engineer by training,
-          front end dev by curiosity.
-        </p>
-        <br />
-        <p>
-          Tech Stack: As long as the problem at hand is interesting enough, I'll
-          find a way to hack things together. But definitely I Python where I
-          can.
-        </p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{readmeText}</p>
       </div>
     );
   };
