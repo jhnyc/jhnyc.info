@@ -9,15 +9,15 @@ export default function Cmatrix(props) {
         ""
       );
     return (
-      <div className="randomtext">
+      <div>
         {shuffle(chars)
           .slice(0, nChar)
           .map((char, ix) => (
             <text
               style={{
                 animationDuration: `1s, 1s`,
-                animationDelay: `${delay + 0.05 * ix}s, ${
-                  delay + 0.05 * ix + 1
+                animationDelay: `${delay + 0.06 * ix}s, ${
+                  delay + 0.06 * ix + 1
                 }s`,
                 animationName: `react-fade-in,react-fade-out`,
                 animationIterationCount: "infinite",

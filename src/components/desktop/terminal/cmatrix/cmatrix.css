@@ -7,6 +7,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .cmatrix text {

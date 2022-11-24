@@ -143,10 +143,7 @@ export default function Terminal(props) {
           <button onClick={() => setDisplayCMatrix(false)}>
             <GrClose />
           </button>
-          <Cmatrix
-            row={Math.floor(width / 34)}
-            col={Math.floor(height / 13.2)}
-          />
+          <Cmatrix row={Math.floor(width / 31)} col={Math.floor(height / 13)} />
         </div>
       </>
     );
