@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "./cmatrix.css";
 import { shuffle } from "lodash";
 
@@ -31,16 +31,18 @@ export default function Cmatrix(props) {
     );
   };
 
-  const renderCmatrix = (row, col) => {
-    const arr = new Array(col);
+  const renderCmatrix = useMemo(() => {
+    const arr = new Array(props.col);
     return (
-      <>{arr.fill("").map((i) => renderSingleColumn(Math.random(), row))}</>
+      <>
+        {arr.fill("").map((i) => renderSingleColumn(Math.random(), props.row))}
+      </>
     );
-  };
+  }, [props.row, props.col]);
 
   return (
     <div className="cmatrix">
-      <div className="randomtext">{renderCmatrix(props.row, props.col)}</div>
+      <div className="randomtext">{renderCmatrix}</div>
     </div>
   );
 }

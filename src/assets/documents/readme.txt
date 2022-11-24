@@ -12,13 +12,13 @@ Name: Johnny Chau
 Location: San Francisco < Hong Kong
 
 Currently:
-  - Student @ USF MS Data Science
+  - 23' MS Data Science @ USF
   - ML Intern @ Atlassian
 
 Previously:
-  - BBA Accounting & Finance @ HKU
+  - 19' BBA Accounting & Finance @ HKU
   - Consultant @ EY
 
-Description: Data scientist/machine learning engineer by training, front end dev by curiosity.
+Description: Data scientist/machine learning engineer by training, web dev by curiosity.
 
-Tech Stack: As long as the problem at hand is interesting enough, I'll find a way to hack things together. But definitely I Python where I can.
+Tech Stack: As long as the problem at hand is interesting enough, I'll find a way to piece things together. But definitely I Python where I can.
