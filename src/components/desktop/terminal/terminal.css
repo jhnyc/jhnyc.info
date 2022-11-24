@@ -6,11 +6,18 @@
 }
 
 #input {
-    border-right: 10px solid #1C1C1C;
-    animation: cursorblink 1.3s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+    /* border-right: 10px solid #1C1C1C;
+    animation: cursorblink 1.3s cubic-bezier(.215, .61, .355, 1) forwards infinite; */
     caret-color: transparent;
     background-color: inherit;
     color: inherit;
+}
+
+#input_cursor {
+    font-size: 1rem;
+    position: absolute;
+    margin-left: -0.5px;
+    animation: cursorblink 1.3s cubic-bezier(.215, .61, .355, 1) forwards infinite;
 }
 
 #input:focus,
@@ -20,7 +27,7 @@
 
 @keyframes cursorblink {
     50% {
-        border-color: white;
+        opacity: 0;
     }
 }
 

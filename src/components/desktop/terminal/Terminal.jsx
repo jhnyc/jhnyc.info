@@ -14,6 +14,7 @@ export default function Terminal(props) {
   const [height, setHeight] = useState(500);
   const [date, setDate] = useState(new Date());
   const [displayCMatrix, setDisplayCMatrix] = useState(false);
+  const [inputCursorPosition, setInputCursorPosition] = useState(0);
   const inputRef = useRef(null);
   const ref = useRef(null);
   const allDir = ["projects", "photography"];
@@ -34,14 +35,24 @@ export default function Terminal(props) {
     }
   };
 
+  const cursorLeftRight = (event) => {
+    console.log(event);
+  };
+
   useEffect(() => {
     setWidth(ref.current.offsetWidth);
     setHeight(ref.current.offsetHeight);
     console.log(ref);
   }, []);
 
-  const enterCommand = (e) => {
-    if (e.key == "Enter") {
+  const commandKeyHandler = (e) => {
+    if (e.keyCode === 37) {
+      var newPosition = Math.max(-input.length, inputCursorPosition - 1);
+      setInputCursorPosition(newPosition);
+    } else if (e.keyCode === 39) {
+      var newPosition = Math.min(0, inputCursorPosition + 1);
+      setInputCursorPosition(newPosition);
+    } else if (e.key == "Enter") {
       setCommandHistory([...commandHistory, input]);
       const commandActionOutput = commandAction(input);
       var output =
@@ -52,11 +63,9 @@ export default function Terminal(props) {
           : commandActionOutput;
       setOutputHistory([...outputHistory, output]);
       setInput("");
+      // reset cursor position
+      setInputCursorPosition(0);
     }
-  };
-
-  const inputHandler = (input) => {
-    setInput(input);
   };
 
   const renderOutput = () => {
@@ -103,12 +112,24 @@ export default function Terminal(props) {
               id="input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={enterCommand}
+              onKeyDown={commandKeyHandler}
               autoFocus
               autocomplete="off"
               style={{ width: `${input.length}ch` }}
               ref={inputRef}
             />
+            <b
+              id="input_cursor"
+              style={{
+                width: "10px",
+                height: "24px",
+                backgroundColor: "var(--color-fontcolor)",
+                color: "transparent",
+                transform: `translate(${inputCursorPosition * 10}px, 0px)`,
+              }}
+            >
+              █
+            </b>
           </div>
         </div>
         <div
