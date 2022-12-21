@@ -54,13 +54,13 @@ export default function Terminal(props) {
       for (let i = 0; i < fileStructure.contents.length; i++) {
         if (dir === fileStructure.contents[i]["name"]) {
           setCurDir(dir);
-          return true;
+          return null;
         }
       }
       return `-bash: cd: ${dir}: No such file or directory`;
     } else if (curDir.length > 0 && dir === "..") {
       setCurDir("");
-      return true;
+      return null;
     } else {
       return `-bash: cd: ${dir}: No such file or directory`;
     }
@@ -92,10 +92,9 @@ export default function Terminal(props) {
       for (var object of fileStructure.contents) {
         if (object.name == filename) {
           return object.text;
-        } else {
-          return `cat: ${filename}: No such file or directory`;
         }
       }
+      return `cat: ${filename}: No such file or directory`;
     } else {
       for (var object of fileStructure.contents) {
         if (object.name == curDir) {
@@ -119,6 +118,8 @@ export default function Terminal(props) {
         return command.split(" ").slice(1, command.split(" ").length).join(" ");
       case command == "ls":
         return listDirectory();
+      case command.startsWith("cat "):
+        return cat(command.split(" ")[1].trim());
       case command == "cmatrix":
         setDisplayCMatrix(true);
         return null;
@@ -139,7 +140,7 @@ export default function Terminal(props) {
       var newPosition = Math.min(0, inputCursorPosition + 1);
       setInputCursorPosition(newPosition);
     } else if (e.key == "Enter") {
-      setCommandHistory([...commandHistory, input]);
+      setCommandHistory([...commandHistory, { dir: curDir, command: input }]);
       const commandActionOutput = commandAction(input);
       var output =
         commandActionOutput === undefined
@@ -157,9 +158,9 @@ export default function Terminal(props) {
   const renderOutput = () => {
     return commandHistory.map((c, i) => (
       <div>
-        <span>visitor@jhnyc.io:~$</span>
+        <span>visitor@jhnyc.io: {c.dir.length == 0 ? `~` : c.dir}$</span>
         <span>&nbsp;</span>
-        <span>{c}</span>
+        <span>{c.command}</span>
         <br />
         {outputHistory[i] === null ? (
           ""
@@ -193,7 +194,9 @@ export default function Terminal(props) {
 
           {renderOutput()}
           <div className={`input ${props.startUp}`}>
-            <label htmlFor="input">visitor@jhnyc.io:~$</label>
+            <label htmlFor="input">
+              visitor@jhnyc.io: {curDir.length == 0 ? `~` : curDir}$
+            </label>
             <input
               id="input"
               value={input}
