@@ -19,24 +19,110 @@ export default function Terminal(props) {
   const ref = useRef(null);
   const allDir = ["projects", "photography"];
 
+  const fileStructure = {
+    name: "~",
+    contents: [
+      {
+        name: "profile_pic.png",
+      },
+      {
+        name: "readme.txt",
+        text: "test readme text",
+      },
+      {
+        name: "projects",
+        contents: [
+          {
+            name: "lihkg_analytics_dashboard.txt",
+            text: "Description: Scraped 800K+ records from a Hong Kong based online forum with 9th highest internet traffic, and built a dashboard to display findings and insights about the website in 2021, e.g. popular topics, gender distribution by channel, user growth, etc.",
+          },
+        ],
+      },
+      {
+        name: "linkedin",
+        text: "https://www.linkedin.com/in/johnny-chau/",
+      },
+      {
+        name: "github",
+        text: "https://github.com/jhnyc",
+      },
+    ],
+  };
+
+  const changeDirectory = (dir) => {
+    if (curDir.length == 0) {
+      for (let i = 0; i < fileStructure.contents.length; i++) {
+        if (dir === fileStructure.contents[i]["name"]) {
+          setCurDir(dir);
+          return true;
+        }
+      }
+      return `-bash: cd: ${dir}: No such file or directory`;
+    } else if (curDir.length > 0 && dir === "..") {
+      setCurDir("");
+      return true;
+    } else {
+      return `-bash: cd: ${dir}: No such file or directory`;
+    }
+  };
+
+  const listDirectory = () => {
+    if (curDir.length == 0) {
+      var outputStr = "";
+      for (let i = 0; i < fileStructure.contents.length; i++) {
+        outputStr += fileStructure.contents[i].name + "\n";
+      }
+      console.log(outputStr);
+      return outputStr;
+    } else {
+      var outputStr = "";
+      for (let i = 0; i < fileStructure.contents.length; i++) {
+        if (fileStructure.contents[i].name == curDir) {
+          for (let j = 0; j < fileStructure.contents[i].contents.length; j++) {
+            outputStr += fileStructure.contents[i].contents[j].name + "\n";
+          }
+          return outputStr;
+        }
+      }
+    }
+  };
+
+  const cat = (filename) => {
+    if (curDir.length == 0) {
+      for (var object of fileStructure.contents) {
+        if (object.name == filename) {
+          return object.text;
+        } else {
+          return `cat: ${filename}: No such file or directory`;
+        }
+      }
+    } else {
+      for (var object of fileStructure.contents) {
+        if (object.name == curDir) {
+          for (var file of object.contents) {
+            if (file.name == filename) {
+              return file.text;
+            } else {
+              return `cat: ${filename}: No such file or directory`;
+            }
+          }
+        }
+      }
+    }
+  };
+
   const commandAction = (command) => {
     switch (true) {
-      case command.startsWith("cd ") && allDir.includes(command.split(" ")[1]):
-        setCurDir(command.split(" ")[1]);
-        break;
+      case command.startsWith("cd "):
+        return changeDirectory(command.split(" ")[1].trim());
       case command.startsWith("echo "):
         return command.split(" ").slice(1, command.split(" ").length).join(" ");
       case command == "ls":
-        console.log("ls");
-        break;
+        return listDirectory();
       case command == "cmatrix":
         setDisplayCMatrix(true);
         return null;
     }
-  };
-
-  const cursorLeftRight = (event) => {
-    console.log(event);
   };
 
   useEffect(() => {
