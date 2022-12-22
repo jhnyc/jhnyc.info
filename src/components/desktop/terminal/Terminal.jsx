@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import WindowWrapper from "../window/WindowWrapper";
 import { GrClose } from "react-icons/gr";
-import CmdOutput from "./CmdOutput";
 import "./terminal.css";
 import Cmatrix from "./cmatrix/Cmatrix";
 
@@ -18,23 +17,19 @@ export default function Terminal(props) {
   const inputRef = useRef(null);
   const ref = useRef(null);
 
-  const [fileStructure, setFileStructure] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  // fetch files structure data
+  const [fileStructure, setFileStructure] = React.useState({
+    name: "~",
+    contents: [],
+  });
+  const [fileStructureLoading, setFileStructureLoading] = React.useState(true);
+  const [fileStructureError, setFileStructureError] = React.useState(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://api.jsonbin.io/v3/b/63a3bf33dfc68e59d56e433d/latest",
-          {
-            headers: {
-              "X-Access-Key":
-                "$2b$10$UhVyITI9YVGohHs752lzyu30rgZ/OUVdi/rB21TfJW40AgPHX/zrm",
-            },
-            method: "GET",
-            mode: "cors",
-          }
+          "https://api.npoint.io/d74175eda2ddc2771b5a"
         );
         if (!response.ok) {
           throw new Error(
@@ -42,14 +37,42 @@ export default function Terminal(props) {
           );
         }
         let actualData = await response.json();
-        setFileStructure(actualData.record);
-        console.log(actualData.record);
-        setError(null);
+        setFileStructure(actualData);
+        setFileStructureError(null);
       } catch (err) {
-        setError(err.message);
+        setFileStructureError(err.message);
         setFileStructure(null);
       } finally {
-        setLoading(false);
+        setFileStructureLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+  // fetch command input-output mapping data
+  const [commandOutput, setCommandOutput] = React.useState({});
+  const [commandOutputLoading, setCommandOutputLoading] = React.useState(true);
+  const [commandOutputError, setCommandOutputError] = React.useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.npoint.io/d74175eda2ddc2771b5a"
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        let actualData = await response.json();
+        setCommandOutput(actualData);
+        setCommandOutputError(null);
+      } catch (err) {
+        setCommandOutputError(err.message);
+        setCommandOutput(null);
+      } finally {
+        setCommandOutputLoading(false);
       }
     };
     getData();
@@ -143,7 +166,6 @@ export default function Terminal(props) {
   useEffect(() => {
     setWidth(ref.current.offsetWidth);
     setHeight(ref.current.offsetHeight);
-    console.log(ref);
   }, []);
 
   const commandKeyHandler = (e) => {
@@ -158,8 +180,8 @@ export default function Terminal(props) {
       const commandActionOutput = commandAction(input);
       var output =
         commandActionOutput === undefined
-          ? CmdOutput[input]
-            ? CmdOutput[input].replaceAll("\n", "</span><br /><span>")
+          ? commandOutput[input]
+            ? commandOutput[input].replaceAll("\n", "</span><br /><span>")
             : `-bash: ${input.split(" ")[0]}: command not found`
           : commandActionOutput;
       setOutputHistory([...outputHistory, output]);

@@ -52,6 +52,10 @@
     }
 }
 
+.terminal_output {
+    white-space: pre-wrap
+}
+
 #intro2.false {
     display: none;
 }

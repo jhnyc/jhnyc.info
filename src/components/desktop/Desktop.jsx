@@ -10,7 +10,7 @@ export default function Desktop() {
   const [color, setColor] = useState(0);
   const [animate, setAnimate] = useState(0);
   const [readmeText, setReadmeText] = useState("");
-  const [projectsData, setProjectsData] = React.useState(null);
+  const [foldersData, setFoldersData] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
@@ -18,15 +18,7 @@ export default function Desktop() {
     const getData = async () => {
       try {
         const response = await fetch(
-          "https://api.jsonbin.io/v3/b/63a3be2bdfc68e59d56e42aa/latest",
-          {
-            headers: {
-              "X-Access-Key":
-                "$2b$10$UhVyITI9YVGohHs752lzyu30rgZ/OUVdi/rB21TfJW40AgPHX/zrm",
-            },
-            method: "GET",
-            mode: "cors",
-          }
+          "https://api.npoint.io/44e1bf1c2d438b7038ad"
         );
         if (!response.ok) {
           throw new Error(
@@ -34,12 +26,12 @@ export default function Desktop() {
           );
         }
         let actualData = await response.json();
-        setProjectsData(actualData.record);
-        console.log(actualData.record);
+        setFoldersData(actualData);
+        console.log(actualData);
         setError(null);
       } catch (err) {
         setError(err.message);
-        setProjectsData(null);
+        setFoldersData(null);
       } finally {
         setLoading(false);
       }
@@ -107,14 +99,19 @@ export default function Desktop() {
           title={"readme.txt"}
           content={readmeContent()}
         />
-        <Window
-          window={"folder"}
-          title={"projects"}
-          color={"#FFC700"}
-          data={projectsData}
-        />
-        <Window window={"folder"} title={"untitled folder"} color={"#534FF7"} />
-        <Window window={"folder"} title={"photography"} color={"#0DAB58"} />
+        {/* {loop over foldersData to render folders} */}
+        {loading
+          ? ""
+          : foldersData.map((i) => {
+              return (
+                <Window
+                  window={"folder"}
+                  title={i.name}
+                  color={i.color ? i.color : "#FFC700"}
+                  data={i.contents}
+                />
+              );
+            })}
         <Window window={"terminal"} title={"terminal"} />
         <a href="https://www.linkedin.com/in/johnny-chau/" target="_blank">
           <File name={"linkedin"} icon={"internet"} />
