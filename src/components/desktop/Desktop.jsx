@@ -4,16 +4,44 @@ import Window from "./window/Window";
 import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
 import { GrNext } from "react-icons/gr";
-import readme from "../../assets/documents/readme.txt";
+// import readme from "../../assets/documents/readme.txt";
 
 export default function Desktop() {
   const [color, setColor] = useState(0);
   const [animate, setAnimate] = useState(0);
-  const [readmeText, setReadmeText] = useState("");
   const [foldersData, setFoldersData] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
+  const [readme, setReadme] = React.useState("");
+  const [readmeLoading, setReadmeLoading] = React.useState(true);
+  const [readMeError, setReadmeError] = React.useState(null);
 
+  // fetch readme content
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          `https://api.npoint.io/06e31b267b975ffe0133`
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        let actualData = await response.json();
+        setReadme(actualData.readme);
+        setReadmeError(null);
+      } catch (err) {
+        setReadmeError(err.message);
+        setReadme(null);
+      } finally {
+        setReadmeLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+  // fetch folders & content
   useEffect(() => {
     const getData = async () => {
       try {
@@ -39,16 +67,10 @@ export default function Desktop() {
     getData();
   }, []);
 
-  useEffect(() => {
-    fetch(readme)
-      .then((res) => res.text())
-      .then((res) => setReadmeText(res));
-  }, []);
-
   const readmeContent = () => {
     return (
       <div style={{ padding: "1rem" }}>
-        <p style={{ whiteSpace: "pre-wrap" }}>{readmeText}</p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{readme}</p>
       </div>
     );
   };
