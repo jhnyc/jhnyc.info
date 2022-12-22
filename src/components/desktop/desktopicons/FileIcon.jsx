@@ -2,7 +2,7 @@ import React from "react";
 import "./desktopicons.css";
 
 export default function File(props) {
-  const renderIcon = (icon) => {
+  const renderIconImg = (icon) => {
     if (icon == "internet") {
       return (
         <path
@@ -31,33 +31,51 @@ export default function File(props) {
     }
   };
 
-  return (
-    <div className="file" onClick={props.onClickHandler}>
-      <div className="icon">
-        <svg
-          width="140"
-          height="140"
-          viewBox="0 0 230 203"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M226 201H2V2H160.745L226 59.4757V201Z"
-            fill="#F2F2F2"
-            stroke="black"
-            stroke-width="4"
-          />
-          <path d="M132 0L230 67.5H132V0Z" fill="#D9D9D9" fill-opacity="0.1" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M156 0V63L228 62.9999L156 0ZM159.254 2.84745V59.0315H223.465L159.254 2.84745Z"
-            fill="black"
-          />
-          {renderIcon(props.icon)}
-        </svg>
-      </div>
-      <p className="file_name">{props.name}</p>
-    </div>
+  const renderFullIcon = () => {
+    return (
+      <>
+        <div className="icon">
+          <svg
+            width="140"
+            height="140"
+            viewBox="0 0 230 203"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M226 201H2V2H160.745L226 59.4757V201Z"
+              fill="#F2F2F2"
+              stroke="black"
+              stroke-width="4"
+            />
+            <path
+              d="M132 0L230 67.5H132V0Z"
+              fill="#D9D9D9"
+              fill-opacity="0.1"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M156 0V63L228 62.9999L156 0ZM159.254 2.84745V59.0315H223.465L159.254 2.84745Z"
+              fill="black"
+            />
+            {renderIconImg(props.icon)}
+          </svg>
+        </div>
+        <p className="file_name">{props.name}</p>
+      </>
+    );
+  };
+
+  return props.link !== undefined ? (
+    <a
+      className="file"
+      href={props.link}
+      target={props.link.startsWith("mailto:") ? "" : "_blank"}
+    >
+      {renderFullIcon()}
+    </a>
+  ) : (
+    <div className="file">{renderFullIcon()}</div>
   );
 }

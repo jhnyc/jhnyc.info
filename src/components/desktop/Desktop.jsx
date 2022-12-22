@@ -134,15 +134,17 @@ export default function Desktop() {
               );
             })}
         <Window window={"terminal"} title={"terminal"} />
-        <a href="https://www.linkedin.com/in/johnny-chau/" target="_blank">
-          <File name={"linkedin"} icon={"internet"} />
-        </a>
-        <a href="https://github.com/jhnyc" target="_blank">
-          <File name={"github"} icon={"internet"} />
-        </a>
-        <a href="mailto:jhnyckc@gmail.com">
-          <File name={"email"} icon={"email"} />
-        </a>
+        <File
+          name={"linkedin"}
+          icon={"internet"}
+          link={"https://www.linkedin.com/in/johnny-chau/"}
+        />
+        <File
+          name={"github"}
+          icon={"internet"}
+          link={"https://github.com/jhnyc"}
+        />
+        <File name={"email"} icon={"email"} link={"mailto:jhnyckc@gmail.com"} />
         <WordAnimation />
       </div>
     </div>
