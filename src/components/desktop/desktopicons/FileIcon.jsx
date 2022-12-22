@@ -76,6 +76,8 @@ export default function File(props) {
       {renderFullIcon()}
     </a>
   ) : (
-    <div className="file">{renderFullIcon()}</div>
+    <div className="file" onClick={props.onClickHandler}>
+      {renderFullIcon()}
+    </div>
   );
 }
