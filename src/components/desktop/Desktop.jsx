@@ -3,7 +3,6 @@ import File from "./desktopicons/FileIcon";
 import Window from "./window/Window";
 import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
-import projectsData from "../../assets/documents/projects.json";
 import { GrNext } from "react-icons/gr";
 import readme from "../../assets/documents/readme.txt";
 
@@ -11,6 +10,42 @@ export default function Desktop() {
   const [color, setColor] = useState(0);
   const [animate, setAnimate] = useState(0);
   const [readmeText, setReadmeText] = useState("");
+  const [projectsData, setProjectsData] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/63a3be2bdfc68e59d56e42aa/latest",
+          {
+            headers: {
+              "X-Access-Key":
+                "$2b$10$UhVyITI9YVGohHs752lzyu30rgZ/OUVdi/rB21TfJW40AgPHX/zrm",
+            },
+            method: "GET",
+            mode: "cors",
+          }
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        let actualData = await response.json();
+        setProjectsData(actualData.record);
+        console.log(actualData.record);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setProjectsData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
 
   useEffect(() => {
     fetch(readme)
