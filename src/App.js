@@ -1,5 +1,4 @@
-import { Navbar, Main, WordAnimation, Terminal, Desktop } from "./components";
-import Cmatrix from "./components/desktop/terminal/cmatrix/Cmatrix";
+import { Navbar, Desktop } from "./components";
 import "./App.css";
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
     <div className="App">
       <Navbar />
       <Desktop />
-      {/* <Cmatrix /> */}
     </div>
   );
 }
