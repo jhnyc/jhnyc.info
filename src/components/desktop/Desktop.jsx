@@ -4,7 +4,6 @@ import Window from "./window/Window";
 import "./desktop.css";
 import WordAnimation from "../word_animation/WordAnimation";
 import { GrNext } from "react-icons/gr";
-// import readme from "../../assets/documents/readme.txt";
 
 export default function Desktop() {
   const [color, setColor] = useState(0);
@@ -141,7 +140,9 @@ export default function Desktop() {
         <a href="https://github.com/jhnyc" target="_blank">
           <File name={"github"} icon={"internet"} />
         </a>
-        <File name={"email"} icon={"email"} />
+        <a href="mailto:jhnyckc@gmail.com">
+          <File name={"email"} icon={"email"} />
+        </a>
         <WordAnimation />
       </div>
     </div>
