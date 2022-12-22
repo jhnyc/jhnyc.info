@@ -17,37 +17,43 @@ export default function Terminal(props) {
   const [inputCursorPosition, setInputCursorPosition] = useState(0);
   const inputRef = useRef(null);
   const ref = useRef(null);
-  const allDir = ["projects", "photography"];
 
-  const fileStructure = {
-    name: "~",
-    contents: [
-      {
-        name: "profile_pic.png",
-      },
-      {
-        name: "readme.txt",
-        text: "test readme text",
-      },
-      {
-        name: "projects",
-        contents: [
+  const [fileStructure, setFileStructure] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/63a3bf33dfc68e59d56e433d/latest",
           {
-            name: "lihkg_analytics_dashboard.txt",
-            text: "Description: Scraped 800K+ records from a Hong Kong based online forum with 9th highest internet traffic, and built a dashboard to display findings and insights about the website in 2021, e.g. popular topics, gender distribution by channel, user growth, etc.",
-          },
-        ],
-      },
-      {
-        name: "linkedin",
-        text: "https://www.linkedin.com/in/johnny-chau/",
-      },
-      {
-        name: "github",
-        text: "https://github.com/jhnyc",
-      },
-    ],
-  };
+            headers: {
+              "X-Access-Key":
+                "$2b$10$UhVyITI9YVGohHs752lzyu30rgZ/OUVdi/rB21TfJW40AgPHX/zrm",
+            },
+            method: "GET",
+            mode: "cors",
+          }
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        let actualData = await response.json();
+        setFileStructure(actualData.record);
+        console.log(actualData.record);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setFileStructure(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
 
   const changeDirectory = (dir) => {
     if (curDir.length == 0) {
@@ -68,20 +74,19 @@ export default function Terminal(props) {
 
   const listDirectory = () => {
     if (curDir.length == 0) {
-      var outputStr = "";
+      var outputFiles = [];
       for (let i = 0; i < fileStructure.contents.length; i++) {
-        outputStr += fileStructure.contents[i].name + "\n";
+        outputFiles.push(fileStructure.contents[i].name);
       }
-      console.log(outputStr);
-      return outputStr;
+      return outputFiles.length == 0 ? "" : outputFiles.join("\n");
     } else {
-      var outputStr = "";
+      var outputFiles = [];
       for (let i = 0; i < fileStructure.contents.length; i++) {
         if (fileStructure.contents[i].name == curDir) {
           for (let j = 0; j < fileStructure.contents[i].contents.length; j++) {
-            outputStr += fileStructure.contents[i].contents[j].name + "\n";
+            outputFiles.push(fileStructure.contents[i].contents[j].name);
           }
-          return outputStr;
+          return outputFiles.join("\n");
         }
       }
     }
@@ -101,12 +106,19 @@ export default function Terminal(props) {
           for (var file of object.contents) {
             if (file.name == filename) {
               return file.text;
-            } else {
-              return `cat: ${filename}: No such file or directory`;
             }
           }
+          return `cat: ${filename}: No such file or directory`;
         }
       }
+    }
+  };
+
+  const pwd = () => {
+    if (curDir.length == 0) {
+      return "jhnyc.io/";
+    } else {
+      return `jhnyc.io/${curDir}`;
     }
   };
 
@@ -120,6 +132,8 @@ export default function Terminal(props) {
         return listDirectory();
       case command.startsWith("cat "):
         return cat(command.split(" ")[1].trim());
+      case command.trim() == "pwd":
+        return pwd();
       case command == "cmatrix":
         setDisplayCMatrix(true);
         return null;
@@ -166,7 +180,10 @@ export default function Terminal(props) {
           ""
         ) : (
           <>
-            <span dangerouslySetInnerHTML={{ __html: outputHistory[i] }}></span>
+            <span
+              dangerouslySetInnerHTML={{ __html: outputHistory[i] }}
+              className="terminal_output"
+            ></span>
             <br />
           </>
         )}
