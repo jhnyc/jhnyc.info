@@ -5,6 +5,12 @@
     display: grid;
     grid-template-rows: 1fr 12fr;
     overflow: hidden;
+    transform: scale(var(--scaleX), var(--scaleY)) translate(0px, -51%);
+    animation-name: main_screen_animation;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.3, 1, 0.9, 1);
+    animation-delay: 3s;
 }
 
 .App-header {
@@ -20,4 +26,37 @@
 
 .App-link {
     color: #61dafb;
+}
+
+.macbook {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    z-index: -10;
+    display: flex;
+    justify-content: center;
+}
+
+.macbook img {
+    transform: scale(0.4) translate(-8%, -14%);
+    z-index: -10;
+    animation-name: macbook_animation;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.3, 1, 0.9, 1);
+    animation-delay: 3s;
+}
+
+@keyframes macbook_animation {
+    100% {
+        transform: scale(2.5) translate(-8%, 20%);
+    }
+}
+
+@keyframes main_screen_animation {
+    100% {
+        transform: scale(1) translate(0px, 0%);
+    }
 }

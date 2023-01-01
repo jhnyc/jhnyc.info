@@ -101,9 +101,6 @@ export default function Desktop() {
           bgColors[(color - 1 >= 0 ? color - 1 : 0) % bgColors.length],
       }}
     >
-      <button id="changeBg" style={{ zIndex: "20" }} onClick={colorHandler}>
-        <GrNext size={35} />
-      </button>
       <div
         className="bg"
         style={{ backgroundColor: bgColors[color % bgColors.length] }}
@@ -120,7 +117,7 @@ export default function Desktop() {
           title={"readme.txt"}
           content={readmeContent()}
         />
-        {/* {loop over foldersData to render folders} */}
+
         {loading
           ? ""
           : foldersData.map((i) => {
@@ -145,6 +142,9 @@ export default function Desktop() {
           link={"https://github.com/jhnyc"}
         />
         <File name={"email"} icon={"email"} link={"mailto:jhnyckc@gmail.com"} />
+        <button id="changeBg" onClick={colorHandler}>
+          <GrNext size={35} />
+        </button>
         <WordAnimation />
       </div>
     </div>
