@@ -12,14 +12,13 @@ export default function WordAnimation() {
     return (
       <>
         <div className="name_bottom" id={`${id}`}>
-          jhnyc.io
+          jhnyc.info
         </div>
         <div
           className={`name ${id}`}
           id={`${id}`}
           style={{ color: `${color}` }}
         >
-          {/* jhnyc.io */}
           <text id="j">j</text>
           <text id="h">h</text>
           <text id="n">n</text>
@@ -27,6 +26,8 @@ export default function WordAnimation() {
           <text id="c">c</text>
           <text id="d">.</text>
           <text id="i">i</text>
+          <text id="o">n</text>
+          <text id="o">f</text>
           <text id="o">o</text>
         </div>
       </>

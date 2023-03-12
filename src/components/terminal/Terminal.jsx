@@ -16,7 +16,7 @@ export default function Terminal() {
           use zsh, please run `chsh -s /bin/zsh`. For more details, please visit
           https://support.apple.com/kb/HT208050.
         </p>
-        <p>jhnyc.io:~ admin$ sudo apt-get update</p>
+        <p>jhnyc.info:~ admin$ sudo apt-get update</p>
         <label htmlFor="input">jhnyc.io:~ admin$</label>
         <input id="input" />
       </div>

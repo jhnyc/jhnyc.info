@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <p id="icon">jhnyc.io/</p>
+      <p id="icon">jhnyc.info/</p>
       <button id="nightmode" onClick={changeMode}>
         {darkmode ? (
           <MdOutlineDarkMode size={25} color={"white"} />

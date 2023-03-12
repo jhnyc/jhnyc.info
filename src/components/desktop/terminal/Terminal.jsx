@@ -139,9 +139,9 @@ export default function Terminal(props) {
 
   const pwd = () => {
     if (curDir.length == 0) {
-      return "jhnyc.io/";
+      return "jhnyc.info/";
     } else {
-      return `jhnyc.io/${curDir}`;
+      return `jhnyc.info/${curDir}`;
     }
   };
 
@@ -194,7 +194,7 @@ export default function Terminal(props) {
   const renderOutput = () => {
     return commandHistory.map((c, i) => (
       <div>
-        <span>visitor@jhnyc.io: {c.dir.length == 0 ? `~` : c.dir}$</span>
+        <span>visitor@jhnyc.info: {c.dir.length == 0 ? `~` : c.dir}$</span>
         <span>&nbsp;</span>
         <span>{c.command}</span>
         <br />
@@ -234,7 +234,7 @@ export default function Terminal(props) {
           {renderOutput()}
           <div className={`input ${props.startUp}`}>
             <label htmlFor="input">
-              visitor@jhnyc.io: {curDir.length == 0 ? `~` : curDir}$
+              visitor@jhnyc.info: {curDir.length == 0 ? `~` : curDir}$
             </label>
             <input
               id="input"
