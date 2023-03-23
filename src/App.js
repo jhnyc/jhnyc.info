@@ -2,6 +2,7 @@ import { Navbar, Desktop } from "./components";
 import { useEffect } from "react";
 import "./App.css";
 import macbook from "./assets/pictures/macbook.png";
+import TrackIP from "./components/TrackIP";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+      <TrackIP />
       <div className="App">
         <Navbar />
         <Desktop />
