@@ -99,9 +99,7 @@ export default function FileViewer(props) {
                 return (
                   <div className="project_image">
                     {" "}
-                    <img
-                      src={require(`../../../assets/projects_images/${element[1]}`)}
-                    />
+                    <img src={element[1]} alt={"pic"} />
                   </div>
                 );
               } else {
