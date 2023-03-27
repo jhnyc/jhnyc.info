@@ -22,7 +22,8 @@
 
 .window_sidebar-file-container {
     padding: 0.5rem;
-    overflow: scroll;
+    overflow-y: scroll;
+    height: 85%;
 }
 
 .window_sidebar-file-container::-webkit-scrollbar {
